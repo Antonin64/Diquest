@@ -1,6 +1,6 @@
-Epitech Jam  march 2024.
-
 ![Alt text](/src/world/assets/diquest_logo.png "Logo")
+
+Epitech Jam  march 2024.
 
 Description
 
