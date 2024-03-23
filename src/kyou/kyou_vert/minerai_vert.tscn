@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh6k5gspbssnt"]
+
+[ext_resource type="Texture2D" uid="uid://byl3q7dli82ld" path="res://kyou/kyou_vert/minerais_1.tres" id="1_y8qis"]
+[ext_resource type="Script" path="res://kyou/kyou_vert/click_kyou.gd" id="3_6nfjy"]
+
+[node name="test_minerai" type="Node2D"]
+
+[node name="minerai_list" type="Sprite2D" parent="."]
+position = Vector2(475, 208)
+texture = ExtResource("1_y8qis")
+
+[node name="click_kyou" type="Button" parent="minerai_list"]
+offset_left = -15.0
+offset_top = -7.0
+offset_right = 6.0
+offset_bottom = 10.0
+flat = true
+script = ExtResource("3_6nfjy")
+
+[connection signal="pressed" from="minerai_list/click_kyou" to="minerai_list/click_kyou" method="_on_pressed"]
