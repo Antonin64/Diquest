@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cx1o7kxy1vvty"]
+
+[ext_resource type="PackedScene" uid="uid://b4ay6ose6si8h" path="res://entities/Player.tscn" id="1_lihs3"]
+[ext_resource type="Texture2D" uid="uid://bsgtfl32oicvd" path="res://icon.svg" id="2_kgg0s"]
+[ext_resource type="Script" path="res://Enemies/Spawn_Bee.gd" id="3_uityf"]
+[ext_resource type="Script" path="res://Enemies/Spawn_Loup.gd" id="4_5hyye"]
+[ext_resource type="Script" path="res://Enemies/Spawn_Minotaur.gd" id="5_d785w"]
+
+[node name="TestMobs" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_lihs3")]
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_kgg0s")
+
+[node name="Spawn_Bee" type="Node2D" parent="."]
+position = Vector2(500, 300)
+script = ExtResource("3_uityf")
+
+[node name="Spawn_Loup" type="Node2D" parent="."]
+position = Vector2(0, 300)
+script = ExtResource("4_5hyye")
+
+[node name="Spawn_Minotaur" type="Node2D" parent="."]
+position = Vector2(-300, 300)
+script = ExtResource("5_d785w")
