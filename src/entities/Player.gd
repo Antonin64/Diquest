@@ -21,7 +21,7 @@ func apply_damage(amount : int):
 	if (dash.is_dashing()):
 		return
 	hp -= amount
-	
+
 func die():
 	if (hp <= 0):
 		1
@@ -43,6 +43,14 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
+	if direction == Vector2.ZERO:
+		$PlayerVisual/player_sprite_tree["parameters/conditions/Idle"] = true
+		$PlayerVisual/player_sprite_tree["parameters/conditions/Walk"] = false
+	else:
+		$PlayerVisual/player_sprite_tree["parameters/conditions/Walk"] = true
+		$PlayerVisual/player_sprite_tree["parameters/conditions/Idle"] = false
+		$PlayerVisual/player_sprite_tree.set("parameters/Idle/blend_position", direction)
+		$PlayerVisual/player_sprite_tree.set("parameters/Walk/blend_position", direction)
 	if Input.is_action_pressed("dash"):
 		dash.start_dash(DASH_DURATION)
 
