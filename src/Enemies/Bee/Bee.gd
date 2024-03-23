@@ -20,11 +20,7 @@ func _ready():
 	hp = BASE_HP
 
 func _physics_process(_delta):
-	if player_node != null and agro:
-		navigation_agent.target_position = player_node.global_position
-	if player_node == null:
-		direction = Vector2.ZERO
-	else:
+	if agro:
 		direction = to_local(navigation_agent.get_next_path_position()).normalized()
 	if not attack and agro:
 		velocity = direction * SPEED
@@ -36,9 +32,8 @@ func _process(_delta):
 	if hp <= 0:
 		set_death(true)
 	
-	if player_node != null:
-		if global_position.distance_to(player_node.global_position) < AGRO_RANGE:
-			agro = true
+	if global_position.distance_to(player_node.global_position) < AGRO_RANGE:
+		agro = true
 	
 	if not attack and agro:
 		set_walking(true)
@@ -82,3 +77,9 @@ func handle_attack():
 func _on_animation_tree_animation_finished(anim_name):
 	if anim_name == "Death":
 		free()
+
+func create_path():
+	navigation_agent.target_position = player_node.global_position
+
+func _on_timer_timeout():
+	create_path()

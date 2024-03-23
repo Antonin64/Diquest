@@ -1,6 +1,6 @@
 [gd_scene load_steps=145 format=3 uid="uid://bxmmpahewe848"]
 
-[ext_resource type="Texture2D" uid="uid://w113u2cbm2bj" path="res://Enemies/Minotaur/Minotaur - Sprite Sheet.png" id="1_1xrs2"]
+[ext_resource type="Texture2D" uid="uid://docka16qvayi2" path="res://Enemies/Minotaur/Minotaur - Sprite Sheet.png" id="1_1xrs2"]
 [ext_resource type="Script" path="res://Enemies/Minotaur/Minotaur.gd" id="1_asuvf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o55ux"]
@@ -1290,7 +1290,7 @@ graph_offset = Vector2(0, -10.5697)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lpibx"]
 size = Vector2(6.5, 6.5)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D2" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_asuvf")
@@ -1305,7 +1305,7 @@ texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_40dmc")
 animation = &"idle_right"
-frame = 3
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
