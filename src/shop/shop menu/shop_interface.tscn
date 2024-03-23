@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtn3wtyerkv1x"]
+[gd_scene load_steps=5 format=3 uid="uid://dtn3wtyerkv1x"]
 
 [ext_resource type="Texture2D" uid="uid://u30bqlnvgxck" path="res://shop/shop_sprite/shop_stylé.jpg" id="1_4cq8c"]
 [ext_resource type="Script" path="res://shop/shop menu/ItemList.gd" id="2_8jtaj"]
+[ext_resource type="Script" path="res://shop/shop menu/exit.gd" id="3_1mjlo"]
+[ext_resource type="Script" path="res://shop/shop menu/forge.gd" id="4_qpu4b"]
 
 [node name="shop interface" type="Control"]
 layout_mode = 3
@@ -27,7 +29,7 @@ auto_translate = false
 texture = ExtResource("1_4cq8c")
 expand_mode = 2
 
-[node name="ItemList" type="ItemList" parent="."]
+[node name="ItemList" type="ItemList" parent="TextureRect"]
 top_level = true
 visibility_layer = 31
 layout_mode = 1
@@ -40,11 +42,12 @@ offset_left = 23.744
 offset_top = 22.896
 offset_right = 62.632
 offset_bottom = 22.68
-item_count = 1
+item_count = 2
 item_0/text = "BITCOIN              20"
+item_1/text = "test"
 script = ExtResource("2_8jtaj")
 
-[node name="Button" type="Button" parent="ItemList"]
+[node name="exit" type="Button" parent="TextureRect"]
 top_level = true
 layout_mode = 0
 offset_left = 1017.0
@@ -52,5 +55,17 @@ offset_top = 570.0
 offset_right = 1130.0
 offset_bottom = 628.0
 text = "EXIT"
+script = ExtResource("3_1mjlo")
 
-[connection signal="item_activated" from="ItemList" to="ItemList" method="_on_item_activated"]
+[node name="forge" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 914.0
+offset_top = 563.0
+offset_right = 1023.0
+offset_bottom = 615.0
+text = "Go to gorge"
+script = ExtResource("4_qpu4b")
+
+[connection signal="item_activated" from="TextureRect/ItemList" to="TextureRect/ItemList" method="_on_item_activated"]
+[connection signal="pressed" from="TextureRect/exit" to="TextureRect/exit" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/forge" to="TextureRect/forge" method="_on_pressed"]
