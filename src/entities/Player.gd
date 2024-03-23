@@ -48,5 +48,5 @@ func _physics_process(delta):
 
 #movement direction
 	var cur_speed = DASH_SPEED if dash.is_dashing() else SPEED
-	velocity = direction.normalized() * cur_speed
+	velocity = direction.normalized() * cur_speed * (delta * 100)
 	move_and_slide()

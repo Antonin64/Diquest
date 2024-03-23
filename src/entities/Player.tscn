@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4ay6ose6si8h"]
+[gd_scene load_steps=8 format=3 uid="uid://b4ay6ose6si8h"]
 
 [ext_resource type="Script" path="res://entities/Player.gd" id="1_ms2wx"]
 [ext_resource type="PackedScene" uid="uid://dq3lmtdw8a5dh" path="res://entities/dash.tscn" id="2_eq173"]
+[ext_resource type="Texture2D" uid="uid://bsgtfl32oicvd" path="res://icon.svg" id="3_rk7u6"]
+[ext_resource type="PackedScene" uid="uid://b0look7hupshh" path="res://entities/stats/stats.tscn" id="4_y4yx5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0oi22"]
 
@@ -24,3 +26,8 @@ tree_root = SubResource("AnimationRootNode_gqamv")
 shape = SubResource("RectangleShape2D_qh2hg")
 
 [node name="Dash" parent="." instance=ExtResource("2_eq173")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_rk7u6")
+
+[node name="Stats" parent="." instance=ExtResource("4_y4yx5")]
