@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4ay6ose6si8h"]
+[gd_scene load_steps=8 format=3 uid="uid://b4ay6ose6si8h"]
 
 [ext_resource type="Script" path="res://entities/Player.gd" id="1_ms2wx"]
 [ext_resource type="PackedScene" uid="uid://dq3lmtdw8a5dh" path="res://entities/dash.tscn" id="2_eq173"]
 [ext_resource type="PackedScene" uid="uid://b0look7hupshh" path="res://entities/stats/stats.tscn" id="4_y4yx5"]
 [ext_resource type="PackedScene" uid="uid://c1uymnvjq0y5t" path="res://entities/player_visual.tscn" id="5_g5ftm"]
 [ext_resource type="PackedScene" uid="uid://bukxumu22e7ld" path="res://entities/stats/SkillTree.tscn" id="5_mv2so"]
+[ext_resource type="PackedScene" uid="uid://wyj8t01350xu" path="res://world/scenes/weapons/weapons.tscn" id="6_pit7j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2wj1o"]
 size = Vector2(20, 30.8245)
@@ -24,6 +25,7 @@ shape = SubResource("RectangleShape2D_2wj1o")
 [node name="PlayerVisual" parent="." instance=ExtResource("5_g5ftm")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 
 [node name="SkillTree" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("5_mv2so")]
 visible = false
@@ -32,3 +34,6 @@ offset_top = -324.0
 offset_right = -576.0
 offset_bottom = -324.0
 Player = NodePath("..")
+
+[node name="Weapons" parent="." instance=ExtResource("6_pit7j")]
+scale = Vector2(0.3, 0.3)

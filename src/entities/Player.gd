@@ -54,6 +54,8 @@ func _physics_process(delta):
 			dash.start_dash(DASH_DURATION)
 			stats.loose_energy(1)
 			dash_direction = direction
+	if Input.is_action_just_pressed("attack"):
+		$Weapons.player_attack(get_global_mouse_position() - Vector2($".".get_global_position()))
 
 #movement direction
 	var cur_speed = DASH_SPEED if dash.is_dashing() else SPEED

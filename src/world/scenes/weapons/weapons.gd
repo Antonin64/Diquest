@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var dmg = 1
+@onready var dmg = 100
 @onready var atk_speed = 1
 @onready var type = "sword"
 @onready var modifier = $Modifier
@@ -13,14 +13,19 @@ func _ready():
 func _process(delta):
 	pass
 
-func player_attack():
+func player_attack(vector_dir : Vector2):
 	if (type == "sword"):
+		$attack_orientation.visible = true
+		$attack_orientation.rotation = vector_dir.angle()
 		$attack_orientation/attachment/atk_anim.play("sword_attack", -1, 1, false)
 
-func is_sword_hit():
+func hide_sword():
+	$attack_orientation.visible = false
+
+func _is_sword_hitting():
 	var arr = $attack_orientation/Area2D.get_overlapping_bodies()
 	for i in arr:
-		i.take_damage()
+		i.take_damage(dmg)
 
 func set_sword(sword):
 	type = "sword"
