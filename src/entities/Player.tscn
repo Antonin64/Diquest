@@ -6,11 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://c1uymnvjq0y5t" path="res://entities/player_visual.tscn" id="5_g5ftm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qh2hg"]
+size = Vector2(34, 54)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_ms2wx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_qh2hg")
 
 [node name="Dash" parent="." instance=ExtResource("2_eq173")]
