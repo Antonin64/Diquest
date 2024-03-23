@@ -17,7 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="InitialNode" parent="." instance=ExtResource("1_do54u")]
+[node name="InitialNode" parent="." node_paths=PackedStringArray("Modifier") instance=ExtResource("1_do54u")]
 layout_direction = 1
 layout_mode = 0
 offset_left = 571.0
@@ -25,9 +25,10 @@ offset_top = 284.0
 offset_right = 611.0
 offset_bottom = 324.0
 disabled = false
+Modifier = NodePath("Modifier")
 
 [node name="Modifier" parent="InitialNode" instance=ExtResource("3_tnt8k")]
-position = Vector2(-876.805, -799.841)
+position = Vector2(-940, -683)
 Stats = {
 "attack_speed": 0.0,
 "critical_chance": 0.0,

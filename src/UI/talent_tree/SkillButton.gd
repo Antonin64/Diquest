@@ -5,9 +5,10 @@ class_name SkillNode
 @onready var panel = $Panel
 @onready var label  = $MarginContainer/Label
 @onready var line2d = $Line2D
+@onready var tooltip = $TooltipPanel
 
 @export var Stats : Node2D
-@export var Modifier : Modifier
+@export var Modifier : Modifiers
 @export var max_level = 1
 var level : int = 0
 
@@ -25,7 +26,7 @@ func _ready():
 	if get_parent() is SkillTree:
 		Stats = get_parent().Stats
 	for child in get_children():
-		if child is Modifier:
+		if child is Modifiers:
 			Modifier = child
 			return
 
@@ -62,6 +63,8 @@ func _on_pressed():
 
 func _on_mouse_entered():
 	_show_tooltip = true
+	tooltip.visible = _show_tooltip
 
 func _on_mouse_exited():
 	_show_tooltip = false
+	tooltip.visible = _show_tooltip

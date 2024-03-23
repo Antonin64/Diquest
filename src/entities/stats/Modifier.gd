@@ -1,5 +1,5 @@
 extends Node2D
-class_name Modifier
+class_name Modifiers
 
 
 @export var Stats = {
