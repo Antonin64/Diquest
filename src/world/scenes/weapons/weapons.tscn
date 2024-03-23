@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://wyj8t01350xu"]
 
 [ext_resource type="Script" path="res://world/scenes/weapons/weapons.gd" id="1_1u0n1"]
-[ext_resource type="Texture2D" uid="uid://v5majshjr83t" path="res://world/assets/weapons/swords/sword_common.png" id="2_lltox"]
-[ext_resource type="Texture2D" uid="uid://cft5nq2gc2km1" path="res://world/assets/weapons/wide_white_slash.png" id="3_0gyo3"]
+[ext_resource type="Texture2D" uid="uid://bjlb7rv7mgv6o" path="res://world/assets/weapons/swords/sword_common.png" id="2_lltox"]
+[ext_resource type="Texture2D" uid="uid://ddvp2ijt384op" path="res://world/assets/weapons/wide_white_slash.png" id="3_0gyo3"]
 [ext_resource type="PackedScene" uid="uid://csusmptumx1mq" path="res://entities/stats/Modifier.tscn" id="4_lhtfj"]
 
 [sub_resource type="Animation" id="Animation_46pre"]
