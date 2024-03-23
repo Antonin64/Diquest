@@ -1,6 +1,6 @@
 [gd_scene load_steps=145 format=3 uid="uid://bxmmpahewe848"]
 
-[ext_resource type="Texture2D" uid="uid://docka16qvayi2" path="res://Enemies/Minotaur/Minotaur - Sprite Sheet.png" id="1_1xrs2"]
+[ext_resource type="Texture2D" uid="uid://w113u2cbm2bj" path="res://Enemies/Minotaur/Minotaur - Sprite Sheet.png" id="1_1xrs2"]
 [ext_resource type="Script" path="res://Enemies/Minotaur/Minotaur.gd" id="1_asuvf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o55ux"]
@@ -1305,7 +1305,7 @@ texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_40dmc")
 animation = &"idle_right"
-frame = 2
+frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1338,4 +1338,12 @@ scale = Vector2(2, 2)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_lpibx")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+max_neighbors = 100
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

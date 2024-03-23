@@ -6,12 +6,14 @@ const ATTACK_RANGE = 50
 const AGRO_RANGE = 300
 const BASE_HP = 5
 
+var target_location
 var direction : Vector2 = Vector2.ZERO
 var attack : bool = false
-var player_node
 var agro
 var hp
+var player_node
 
+@onready var navigation_agent := $NavigationAgent2D as NavigationAgent2D
 @onready var animation_tree = $AnimationTree
 
 func _ready():
@@ -19,6 +21,8 @@ func _ready():
 	hp = BASE_HP
 
 func _physics_process(_delta):
+	if agro:
+		direction = to_local(navigation_agent.get_next_path_position()).normalized()
 	if not attack and agro:
 		velocity = direction * SPEED
 	else:
@@ -28,18 +32,12 @@ func _physics_process(_delta):
 func _process(_delta):
 	if hp <= 0:
 		set_death(true)
-	if player_node == null:
-		direction = Vector2.ZERO
-	else:
-		direction = global_position.direction_to(player_node.global_position)
 	
-	if player_node != null:
-		if global_position.distance_to(player_node.global_position) < AGRO_RANGE:
-			agro = true
+	if global_position.distance_to(player_node.global_position) < AGRO_RANGE:
+		agro = true
 	
-	if player_node != null:
-		if global_position.distance_to(player_node.global_position) < ATTACK_RANGE and not attack:
-			set_attack(true)
+	if global_position.distance_to(player_node.global_position) < ATTACK_RANGE and not attack:
+		set_attack(true)
 	
 	if not attack and agro:
 		set_walking(true)
@@ -79,3 +77,9 @@ func handle_attack():
 func _on_animation_tree_animation_finished(anim_name):
 	if anim_name == "Death":
 		free()
+
+func create_path():
+	navigation_agent.target_position = player_node.global_position
+
+func _on_timer_timeout():
+	create_path()
