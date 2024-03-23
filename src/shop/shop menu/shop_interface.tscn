@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtn3wtyerkv1x"]
+
+[ext_resource type="Texture2D" uid="uid://u30bqlnvgxck" path="res://shop/shop_sprite/shop_stylé.jpg" id="1_4cq8c"]
+[ext_resource type="Script" path="res://shop/shop menu/ItemList.gd" id="2_8jtaj"]
+
+[node name="shop interface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+light_mask = 8
+layout_mode = 0
+offset_left = -36.0
+offset_top = 9.0
+offset_right = 1193.0
+offset_bottom = 668.0
+auto_translate = false
+texture = ExtResource("1_4cq8c")
+expand_mode = 2
+
+[node name="ItemList" type="ItemList" parent="."]
+top_level = true
+visibility_layer = 31
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.028
+anchor_top = 0.048
+anchor_right = 0.134
+anchor_bottom = 0.84
+offset_left = 23.744
+offset_top = 22.896
+offset_right = 62.632
+offset_bottom = 22.68
+item_count = 1
+item_0/text = "BITCOIN              20"
+script = ExtResource("2_8jtaj")
+
+[node name="Button" type="Button" parent="ItemList"]
+top_level = true
+layout_mode = 0
+offset_left = 1017.0
+offset_top = 570.0
+offset_right = 1130.0
+offset_bottom = 628.0
+text = "EXIT"
+
+[connection signal="item_activated" from="ItemList" to="ItemList" method="_on_item_activated"]
