@@ -5,10 +5,14 @@ var health = 100.0
 var life_regen = 0.1
 var damage = 1.0
 var stamina = 1.0
+var energy = 1.0
 var stamina_regen = 0.2
 var attack_speed = 1.0
 var critical_chance = 5.0
 var critical_damage = 50.0
+
+@onready var energyregen = $EnergyRegen
+@onready var liferegen = $LifeRegen
 
 #Private var
 var talent_point = 0
@@ -123,6 +127,9 @@ func get_damage_reduction():
 			num += modifier["damage_reduction"]
 	return num
 
+func get_energy():
+	return energy
+
 #####  Setter  #####
 
 #talent point
@@ -151,3 +158,31 @@ func set_max_health(amt):
 
 func add_modifier(id, modifier):
 	modifiers[id] = modifier
+	
+func add_energy(amt):
+	if energy + amt > stamina:
+		energy = stamina
+		return
+	energy += amt
+
+func loose_energy(amt):
+	if energy - amt < 0:
+		energy = 0
+		return
+	energy -= amt
+	
+#regen
+
+func regen():
+	energyregen.start()
+	liferegen.start()
+
+
+func _on_life_regen_timeout():
+	add_energy(get_stamina_regen())
+	energyregen.start()
+
+
+func _on_energy_regen_timeout():
+	add_health(get_life_regen())
+	liferegen.start()

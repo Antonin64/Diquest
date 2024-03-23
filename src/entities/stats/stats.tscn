@@ -6,4 +6,13 @@
 [node name="Stats" type="Node2D"]
 script = ExtResource("1_0668p")
 
+[node name="EnergyRegen" type="Timer" parent="."]
+one_shot = true
+
+[node name="LifeRegen" type="Timer" parent="."]
+one_shot = true
+
 [node name="Modifier" parent="." instance=ExtResource("2_6p6ak")]
+
+[connection signal="timeout" from="EnergyRegen" to="." method="_on_energy_regen_timeout"]
+[connection signal="timeout" from="LifeRegen" to="." method="_on_life_regen_timeout"]

@@ -1,29 +1,35 @@
 extends CharacterBody2D
 
 #constant
-const SPEED = 280.0
+const SPEED = 120.0
 const JUMP_VELOCITY = -400.0
-const DASH_SPEED = 1100
-const DASH_DURATION = 0.01
+const DASH_SPEED = 470
+const DASH_DURATION = 0.12
 
 #public var
 @export var max_hp : int  = 100
 @export var hp : int  = 100
 
 @onready var dash = $Dash
+@onready var stats = $Stats
+
+var dash_direction
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 ##### combat #####
 
+func _ready():
+	stats.regen()
+
 func apply_damage(amount : int):
 	if (dash.is_dashing()):
 		return
-	hp -= amount
+	stats.loose_health(amount)
 
 func die():
-	if (hp <= 0):
+	if (stats.get_health() <= 0):
 		1
 		#TODO die
 
@@ -44,11 +50,17 @@ func _physics_process(delta):
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	anim_player((direction))
 	if Input.is_action_pressed("dash"):
-		dash.start_dash(DASH_DURATION)
+		if stats.get_energy() >= 1:
+			dash.start_dash(DASH_DURATION)
+			stats.loose_energy(1)
+			dash_direction = direction
 
 #movement direction
 	var cur_speed = DASH_SPEED if dash.is_dashing() else SPEED
-	velocity = direction.normalized() * cur_speed * (delta * 100)
+	if (dash.is_dashing()):
+		velocity = dash_direction.normalized() * cur_speed * (delta * 100)
+	else:
+		velocity = direction.normalized() * cur_speed * (delta * 100)
 	move_and_slide()
 
 func anim_player(direction):

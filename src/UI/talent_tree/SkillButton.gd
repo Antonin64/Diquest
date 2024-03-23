@@ -7,13 +7,17 @@ class_name SkillNode
 @onready var line2d = $Line2D
 
 @export var Stats : Node2D
+@export var Modifier : Modifier
 @export var max_level = 1
 var level : int = 0
 
 func _ready():
 	if get_parent() is SkillNode:
+		Stats = get_parent().Stats
 		line2d.add_point(global_position + size / 2)
 		line2d.add_point(get_parent().global_position + size / 2)
+	if get_parent() is SkillTree:
+		Stats = get_parent().Stats
 
 func set_level(amt : int):
 	if (amt > max_level):
