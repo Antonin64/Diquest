@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const DAMAGE = 10
-const SPEED = 220
+const SPEED = 110
 const ATTACK_RANGE = 50
 const AGRO_RANGE = 300
 const BASE_HP = 5
@@ -44,7 +44,7 @@ func _process(_delta):
 		set_walking(false)
 	
 	if player_node != null:
-		if global_position.distance_to(player_node.global_position) < ATTACK_RANGE:
+		if global_position.distance_to(player_node.global_position) < ATTACK_RANGE and not attack:
 			set_attack(true)
 
 func set_attack(value = false):
@@ -66,6 +66,7 @@ func update_blend_position():
 	animation_tree["parameters/Walk/blend_position"] = direction
 
 func take_damage(value):
+	agro = true
 	hp = hp - value
 
 func handle_attack():

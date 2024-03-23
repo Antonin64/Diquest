@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const DAMAGE = 10
-const SPEED = 120
+const SPEED = 150
 const ATTACK_RANGE = 50
 const AGRO_RANGE = 300
 const BASE_HP = 5
@@ -37,19 +37,19 @@ func _process(_delta):
 		if global_position.distance_to(player_node.global_position) < AGRO_RANGE:
 			agro = true
 	
-	if player_node != null:
-		if global_position.distance_to(player_node.global_position) < ATTACK_RANGE and not attack:
-			set_attack(true)
-	
 	if not attack and agro:
 		set_walking(true)
 		update_blend_position()
 	else:
 		set_walking(false)
+	
+	if player_node != null:
+		if global_position.distance_to(player_node.global_position) < ATTACK_RANGE and not attack:
+			set_attack(true)
 
 func set_attack(value = false):
 	attack = value
-	animation_tree["parameters/conditions/big_attack"] = value
+	animation_tree["parameters/conditions/attack"] = value
 
 func set_death(value):
 	animation_tree["parameters/conditions/death"] = value
@@ -59,9 +59,7 @@ func set_walking(value):
 	animation_tree["parameters/conditions/idle"] = not value
 
 func update_blend_position():
-	animation_tree["parameters/Big_Attack/blend_position"] = direction
-	animation_tree["parameters/Quick_attack/blend_position"] = direction
-	animation_tree["parameters/Tourbi_lol/blend_position"] = direction
+	animation_tree["parameters/Attack/blend_position"] = direction
 	animation_tree["parameters/Idle/blend_position"] = direction
 	animation_tree["parameters/Walk/blend_position"] = direction
 

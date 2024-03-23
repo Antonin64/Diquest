@@ -12,7 +12,7 @@
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D2" type="Sprite2D" parent="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_kgg0s")
 
@@ -20,10 +20,22 @@ texture = ExtResource("2_kgg0s")
 position = Vector2(500, 300)
 script = ExtResource("3_uityf")
 
+[node name="Timer" type="Timer" parent="Spawn_Bee"]
+wait_time = 60.0
+one_shot = true
+
 [node name="Spawn_Loup" type="Node2D" parent="."]
 position = Vector2(0, 300)
 script = ExtResource("4_5hyye")
 
+[node name="Timer" type="Timer" parent="Spawn_Loup"]
+
 [node name="Spawn_Minotaur" type="Node2D" parent="."]
 position = Vector2(-300, 300)
 script = ExtResource("5_d785w")
+
+[node name="Timer" type="Timer" parent="Spawn_Minotaur"]
+
+[connection signal="timeout" from="Spawn_Bee/Timer" to="Spawn_Bee" method="_on_timer_timeout"]
+[connection signal="timeout" from="Spawn_Loup/Timer" to="Spawn_Loup" method="_on_timer_timeout"]
+[connection signal="timeout" from="Spawn_Minotaur/Timer" to="Spawn_Minotaur" method="_on_timer_timeout"]
