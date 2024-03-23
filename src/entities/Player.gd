@@ -17,22 +17,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 ##### combat #####
 
-func _on_ready():
-	$PlayerVisual/player_sprite_tree["parameters/conditions/Idle"] = true
-	$PlayerVisual/player_sprite_tree["parameters/conditions/Walk"] = false
-	$PlayerVisual/plate_armor_feet_tree["parameters/conditions/Idle"] = true
-	$PlayerVisual/plate_armor_feet_tree["parameters/conditions/Walk"] = false
-	$PlayerVisual/plate_armor_legs_tree["parameters/conditions/Idle"] = true
-	$PlayerVisual/plate_armor_legs_tree["parameters/conditions/Walk"] = false
-	$PlayerVisual/plate_armor_head_tree["parameters/conditions/Idle"] = true
-	$PlayerVisual/plate_armor_head_tree["parameters/conditions/Walk"] = false
-	$PlayerVisual/plate_armor_shoulders_tree["parameters/conditions/Idle"] = true
-	$PlayerVisual/plate_armor_shoulders_tree["parameters/conditions/Walk"] = false
-	$PlayerVisual/plate_armor_torso_tree["parameters/conditions/Idle"] = true
-	$PlayerVisual/plate_armor_torso_tree["parameters/conditions/Walk"] = false
-	$PlayerVisual/plate_armor_hands_tree["parameters/conditions/Idle"] = true
-	$PlayerVisual/plate_armor_hands_tree["parameters/conditions/Walk"] = false
-
 func apply_damage(amount : int):
 	if (dash.is_dashing()):
 		return
