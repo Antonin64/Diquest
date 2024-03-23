@@ -1,0 +1,128 @@
+[gd_scene load_steps=18 format=3 uid="uid://p0khjglj72fl"]
+
+[ext_resource type="Texture2D" uid="uid://glyava3lk1uv" path="res://merchant/merchant_pnj/merchant_sprites/Gipsy spritesheet.png" id="1_8m5wv"]
+[ext_resource type="Script" path="res://merchant/merchant_pnj/pnj_interact.gd" id="2_3ipts"]
+[ext_resource type="Script" path="res://merchant/merchant_pnj/AnimatedSprite2D.gd" id="2_duq4l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5je34"]
+atlas = ExtResource("1_8m5wv")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf13m"]
+atlas = ExtResource("1_8m5wv")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5t1go"]
+atlas = ExtResource("1_8m5wv")
+region = Rect2(240, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r365v"]
+atlas = ExtResource("1_8m5wv")
+region = Rect2(0, 160, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvtog"]
+atlas = ExtResource("1_8m5wv")
+region = Rect2(80, 160, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81xlv"]
+atlas = ExtResource("1_8m5wv")
+region = Rect2(160, 160, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inygf"]
+atlas = ExtResource("1_8m5wv")
+region = Rect2(240, 160, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jxf6"]
+atlas = ExtResource("1_8m5wv")
+region = Rect2(320, 160, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0vx3"]
+atlas = ExtResource("1_8m5wv")
+region = Rect2(400, 160, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yd8e"]
+atlas = ExtResource("1_8m5wv")
+region = Rect2(480, 160, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlfy5"]
+atlas = ExtResource("1_8m5wv")
+region = Rect2(560, 160, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o421o"]
+atlas = ExtResource("1_8m5wv")
+region = Rect2(640, 160, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3f7a"]
+atlas = ExtResource("1_8m5wv")
+region = Rect2(720, 160, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0eurd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5je34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mf13m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5t1go")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r365v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvtog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81xlv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inygf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jxf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0vx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yd8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlfy5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o421o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3f7a")
+}],
+"loop": true,
+"name": &"all the time",
+"speed": 4.0
+}]
+
+[node name="Pnj" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(634, 234)
+sprite_frames = SubResource("SpriteFrames_0eurd")
+animation = &"all the time"
+frame_progress = 0.66086
+script = ExtResource("2_duq4l")
+
+[node name="Button" type="Button" parent="AnimatedSprite2D"]
+anchors_preset = -1
+anchor_left = 0.046
+anchor_top = 0.057
+anchor_right = 0.046
+anchor_bottom = 0.057
+offset_left = -14.68
+offset_top = -0.56
+offset_right = 11.32
+offset_bottom = 33.44
+flat = true
+script = ExtResource("2_3ipts")
+
+[connection signal="pressed" from="AnimatedSprite2D/Button" to="AnimatedSprite2D/Button" method="_on_pressed"]
