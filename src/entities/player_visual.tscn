@@ -1,18 +1,19 @@
-[gd_scene load_steps=386 format=3 uid="uid://c1uymnvjq0y5t"]
+[gd_scene load_steps=404 format=3 uid="uid://c1uymnvjq0y5t"]
 
-[ext_resource type="Texture2D" path="res://world/assets/player/hurt/BODY_male.png" id="1_f3fx6"]
-[ext_resource type="Texture2D" path="res://world/assets/player/walkcycle/BODY_male.png" id="2_dv1kb"]
-[ext_resource type="Texture2D" path="res://world/assets/player/walkcycle/FEET_plate_armor_shoes.png" id="3_1bniy"]
-[ext_resource type="Texture2D" path="res://world/assets/player/hurt/FEET_plate_armor_shoes.png" id="3_wr0j0"]
-[ext_resource type="Texture2D" path="res://world/assets/player/hurt/LEGS_plate_armor_pants.png" id="5_8j8a4"]
-[ext_resource type="Texture2D" path="res://world/assets/player/walkcycle/LEGS_plate_armor_pants.png" id="6_pyac5"]
-[ext_resource type="Texture2D" path="res://world/assets/player/walkcycle/HEAD_plate_armor_helmet.png" id="7_go21t"]
-[ext_resource type="Texture2D" path="res://world/assets/player/hurt/HEAD_plate_armor_helmet.png" id="7_lrafe"]
-[ext_resource type="Texture2D" path="res://world/assets/player/hurt/TORSO_plate_armor_arms_shoulders.png" id="9_dxno4"]
-[ext_resource type="Texture2D" path="res://world/assets/player/walkcycle/TORSO_plate_armor_arms_shoulders.png" id="10_p0q5n"]
-[ext_resource type="Texture2D" path="res://world/assets/player/walkcycle/TORSO_plate_armor_torso.png" id="11_mqrc1"]
-[ext_resource type="Texture2D" path="res://world/assets/player/hurt/HANDS_plate_armor_gloves.png" id="12_jkrxu"]
-[ext_resource type="Texture2D" path="res://world/assets/player/walkcycle/HANDS_plate_armor_gloves.png" id="12_rw04t"]
+[ext_resource type="Texture2D" uid="uid://bb16rx0sojsg4" path="res://world/assets/player/hurt/BODY_male.png" id="1_f3fx6"]
+[ext_resource type="Texture2D" uid="uid://koi5vt3h768u" path="res://world/assets/player/walkcycle/BODY_male.png" id="2_dv1kb"]
+[ext_resource type="Texture2D" uid="uid://bi5415ipto0ti" path="res://world/assets/player/walkcycle/FEET_plate_armor_shoes.png" id="3_1bniy"]
+[ext_resource type="Texture2D" uid="uid://di53dna6pgpwe" path="res://world/assets/player/hurt/FEET_plate_armor_shoes.png" id="3_wr0j0"]
+[ext_resource type="Texture2D" uid="uid://h8m36x4l0bpt" path="res://world/assets/player/hurt/LEGS_plate_armor_pants.png" id="5_8j8a4"]
+[ext_resource type="Texture2D" uid="uid://ijiaibb2suwd" path="res://world/assets/player/walkcycle/LEGS_plate_armor_pants.png" id="6_pyac5"]
+[ext_resource type="Texture2D" uid="uid://dah7x6gvjqvam" path="res://world/assets/player/walkcycle/HEAD_plate_armor_helmet.png" id="7_go21t"]
+[ext_resource type="Texture2D" uid="uid://bufi5k4k7pbex" path="res://world/assets/player/hurt/HEAD_plate_armor_helmet.png" id="7_lrafe"]
+[ext_resource type="Texture2D" uid="uid://jk2ks1rjvda1" path="res://world/assets/player/hurt/TORSO_plate_armor_arms_shoulders.png" id="9_dxno4"]
+[ext_resource type="Texture2D" uid="uid://4h8oslj6llte" path="res://world/assets/player/walkcycle/TORSO_plate_armor_arms_shoulders.png" id="10_p0q5n"]
+[ext_resource type="Texture2D" uid="uid://ccnuavkuttsao" path="res://world/assets/player/hurt/TORSO_plate_armor_torso.png" id="11_jpwrx"]
+[ext_resource type="Texture2D" uid="uid://cp4v4hqds2k7g" path="res://world/assets/player/walkcycle/TORSO_plate_armor_torso.png" id="11_mqrc1"]
+[ext_resource type="Texture2D" uid="uid://cjbmn0k66tnbp" path="res://world/assets/player/hurt/HANDS_plate_armor_gloves.png" id="12_jkrxu"]
+[ext_resource type="Texture2D" uid="uid://bfiwdhdaklegl" path="res://world/assets/player/walkcycle/HANDS_plate_armor_gloves.png" id="12_rw04t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_noifj"]
 atlas = ExtResource("1_f3fx6")
@@ -242,7 +243,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"down_idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -279,7 +280,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"left_idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -316,7 +317,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"right_idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -353,7 +354,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"up_idle",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="Animation" id="Animation_p72m2"]
@@ -411,7 +412,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_pb8ul"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -439,7 +440,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_6cnj1"]
-length = 1.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -448,7 +448,7 @@ tracks/0/path = NodePath("player_sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
@@ -467,7 +467,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_5cupq"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -495,7 +495,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_qgvk0"]
-length = 1.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -504,7 +503,7 @@ tracks/0/path = NodePath("player_sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
@@ -523,7 +522,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_q3xck"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -551,7 +550,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_516bn"]
-length = 1.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -560,7 +558,7 @@ tracks/0/path = NodePath("player_sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
@@ -579,7 +577,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_xn0hw"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -892,7 +890,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"death",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -929,7 +927,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"down_idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -966,7 +964,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"left_idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1003,7 +1001,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"right_idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1040,11 +1038,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"up_idle",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="Animation" id="Animation_f56la"]
-length = 1.2
+length = 0.75
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1053,7 +1051,7 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
@@ -1099,7 +1097,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_tfm1h"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1154,7 +1152,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_y4nn8"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1209,7 +1207,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_73qla"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1264,7 +1262,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_x0br4"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1532,7 +1530,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"down_idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1569,7 +1567,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"left_idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1606,7 +1604,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"right_idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1643,7 +1641,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"up_idle",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="Animation" id="Animation_g1h0o"]
@@ -1675,7 +1673,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_jla2i"]
-length = 1.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1684,7 +1681,7 @@ tracks/0/path = NodePath("plate_armor_legs:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
@@ -1703,7 +1700,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_3fu0l"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1731,7 +1728,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_dsuy6"]
-length = 1.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1740,7 +1736,7 @@ tracks/0/path = NodePath("plate_armor_legs:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
@@ -1759,7 +1755,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_3qw8j"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1787,7 +1783,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_7cdf2"]
-length = 1.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1796,7 +1791,7 @@ tracks/0/path = NodePath("plate_armor_legs:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
@@ -1815,7 +1810,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_17ecg"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1843,7 +1838,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_kb75b"]
-length = 1.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1852,7 +1846,7 @@ tracks/0/path = NodePath("plate_armor_legs:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
@@ -1871,7 +1865,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_x0gsc"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2139,7 +2133,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"down_idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2176,7 +2170,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"left_idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2213,7 +2207,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"right_idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2250,7 +2244,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"up_idle",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="Animation" id="Animation_513s1"]
@@ -2309,7 +2303,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_1ndhk"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2364,7 +2358,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_ur8j4"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2419,7 +2413,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_7m1w1"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2474,7 +2468,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_einfr"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2742,7 +2736,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"down_idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2779,7 +2773,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"left_idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2816,7 +2810,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"right_idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2853,7 +2847,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"up_idle",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="Animation" id="Animation_7wuy7"]
@@ -2912,7 +2906,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_0slvy"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2967,7 +2961,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_uu63o"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -3022,7 +3016,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_v7ep4"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -3077,7 +3071,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_4qmi4"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -3116,6 +3110,30 @@ _data = {
 "up": SubResource("Animation_sops3"),
 "up_idle": SubResource("Animation_4qmi4")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmpxb"]
+atlas = ExtResource("11_jpwrx")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cbyj"]
+atlas = ExtResource("11_jpwrx")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnkr8"]
+atlas = ExtResource("11_jpwrx")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11sv3"]
+atlas = ExtResource("11_jpwrx")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1767"]
+atlas = ExtResource("11_jpwrx")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j04o5"]
+atlas = ExtResource("11_jpwrx")
+region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kkio2"]
 atlas = ExtResource("11_mqrc1")
@@ -3265,6 +3283,29 @@ region = Rect2(0, 0, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_fmpxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cbyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnkr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11sv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1767")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j04o5")
+}],
+"loop": true,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_kkio2")
 }, {
 "duration": 1.0,
@@ -3290,7 +3331,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"down",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -3298,7 +3339,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"down_idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -3335,7 +3376,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"left_idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -3364,7 +3405,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"right",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -3372,7 +3413,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"right_idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -3409,11 +3450,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"up_idle",
-"speed": 5.0
+"speed": 8.0
 }]
 
-[sub_resource type="Animation" id="Animation_q47sj"]
-length = 1.6
+[sub_resource type="Animation" id="Animation_w4mpq"]
+length = 0.75
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -3422,7 +3463,34 @@ tracks/0/path = NodePath("plate_armor_torso:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("plate_armor_torso:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["death"]
+}
+
+[sub_resource type="Animation" id="Animation_q47sj"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("plate_armor_torso:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
@@ -3441,7 +3509,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_h5rg8"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -3496,7 +3564,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_qiolf"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -3524,7 +3592,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_aaye3"]
-length = 1.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -3533,7 +3600,7 @@ tracks/0/path = NodePath("plate_armor_torso:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
@@ -3552,7 +3619,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_u8nf0"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -3607,7 +3674,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_oj8mn"]
-length = 0.2
+length = 0.125
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -3636,6 +3703,7 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6v7ee"]
 _data = {
+"death": SubResource("Animation_w4mpq"),
 "down": SubResource("Animation_q47sj"),
 "down_idle": SubResource("Animation_h5rg8"),
 "left": SubResource("Animation_ir2xm"),
@@ -3837,7 +3905,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"death",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -3874,7 +3942,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"down_idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -3911,7 +3979,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"left_idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -3948,7 +4016,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"right_idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -3985,14 +4053,275 @@ animations = [{
 }],
 "loop": true,
 "name": &"up_idle",
-"speed": 5.0
+"speed": 8.0
 }]
+
+[sub_resource type="Animation" id="Animation_ml78p"]
+length = 0.75
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../plate_armor_hands:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../plate_armor_hands:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["death"]
+}
+
+[sub_resource type="Animation" id="Animation_6tptx"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../plate_armor_hands:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../plate_armor_hands:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["down"]
+}
+
+[sub_resource type="Animation" id="Animation_4ouj3"]
+length = 0.125
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../plate_armor_hands:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../plate_armor_hands:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["down_idle"]
+}
+
+[sub_resource type="Animation" id="Animation_nynwc"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../plate_armor_hands:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../plate_armor_hands:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["left"]
+}
+
+[sub_resource type="Animation" id="Animation_lnlbw"]
+length = 0.125
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../plate_armor_hands:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../plate_armor_hands:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["left_idle"]
+}
+
+[sub_resource type="Animation" id="Animation_0krge"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../plate_armor_hands:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../plate_armor_hands:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["right"]
+}
+
+[sub_resource type="Animation" id="Animation_la8gq"]
+length = 0.125
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../plate_armor_hands:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../plate_armor_hands:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["right_idle"]
+}
+
+[sub_resource type="Animation" id="Animation_vyfcl"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../plate_armor_hands:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../plate_armor_hands:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["up"]
+}
+
+[sub_resource type="Animation" id="Animation_6s5y5"]
+length = 0.125
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../plate_armor_hands:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../plate_armor_hands:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["up_idle"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y703a"]
+_data = {
+"death": SubResource("Animation_ml78p"),
+"down": SubResource("Animation_6tptx"),
+"down_idle": SubResource("Animation_4ouj3"),
+"left": SubResource("Animation_nynwc"),
+"left_idle": SubResource("Animation_lnlbw"),
+"right": SubResource("Animation_0krge"),
+"right_idle": SubResource("Animation_la8gq"),
+"up": SubResource("Animation_vyfcl"),
+"up_idle": SubResource("Animation_6s5y5")
+}
 
 [node name="PlayerVisual" type="Node2D"]
 
 [node name="player_sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_u6mc4")
-animation = &"down_idle"
+animation = &"death"
 
 [node name="player_sprite_anim" type="AnimationPlayer" parent="."]
 libraries = {
@@ -4013,9 +4342,8 @@ parameters/Walk/blend_position = Vector2(-0.151819, 0.894737)
 parameters/death/blend_position = Vector2(0, 0)
 
 [node name="plate_armor_feet" type="AnimatedSprite2D" parent="."]
-visible = false
 sprite_frames = SubResource("SpriteFrames_3f6y6")
-animation = &"down_idle"
+animation = &"death"
 
 [node name="plate_armor_feet_anim" type="AnimationPlayer" parent="."]
 root_node = NodePath("../plate_armor_feet")
@@ -4023,18 +4351,43 @@ libraries = {
 "": SubResource("AnimationLibrary_h7rn5")
 }
 
+[node name="plate_armor_feet_tree" type="AnimationTree" parent="."]
+root_node = NodePath("../plate_armor_feet")
+libraries = {
+"": SubResource("AnimationLibrary_h7rn5")
+}
+tree_root = SubResource("AnimationNodeStateMachine_ldtcy")
+anim_player = NodePath("../plate_armor_feet_anim")
+parameters/conditions/Idle = false
+parameters/conditions/Walk = false
+parameters/conditions/death = false
+parameters/Idle/blend_position = Vector2(0.0276035, 0.815789)
+parameters/Walk/blend_position = Vector2(-0.151819, 0.894737)
+parameters/death/blend_position = Vector2(0, 0)
+
 [node name="plate_armor_legs" type="AnimatedSprite2D" parent="."]
-visible = false
 sprite_frames = SubResource("SpriteFrames_evjya")
-animation = &"down_idle"
+animation = &"death"
 
 [node name="plate_armor_legs_anim" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_2i027")
 }
 
+[node name="plate_armor_legs_tree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2i027")
+}
+tree_root = SubResource("AnimationNodeStateMachine_ldtcy")
+anim_player = NodePath("../plate_armor_legs_anim")
+parameters/conditions/Idle = false
+parameters/conditions/Walk = false
+parameters/conditions/death = false
+parameters/Idle/blend_position = Vector2(0.0276035, 0.815789)
+parameters/Walk/blend_position = Vector2(-0.151819, 0.894737)
+parameters/death/blend_position = Vector2(0, 0)
+
 [node name="plate_armor_head" type="AnimatedSprite2D" parent="."]
-visible = false
 sprite_frames = SubResource("SpriteFrames_1vti3")
 animation = &"death"
 
@@ -4044,8 +4397,21 @@ libraries = {
 "": SubResource("AnimationLibrary_pjlo2")
 }
 
+[node name="plate_armor_head_tree" type="AnimationTree" parent="."]
+root_node = NodePath("../plate_armor_head")
+libraries = {
+"": SubResource("AnimationLibrary_pjlo2")
+}
+tree_root = SubResource("AnimationNodeStateMachine_ldtcy")
+anim_player = NodePath("../plate_armor_head_anim")
+parameters/conditions/Idle = false
+parameters/conditions/Walk = false
+parameters/conditions/death = false
+parameters/Idle/blend_position = Vector2(0.0276035, 0.815789)
+parameters/Walk/blend_position = Vector2(-0.151819, 0.894737)
+parameters/death/blend_position = Vector2(0, 0)
+
 [node name="plate_armor_shoulders" type="AnimatedSprite2D" parent="."]
-visible = false
 sprite_frames = SubResource("SpriteFrames_mmcb0")
 animation = &"death"
 
@@ -4054,8 +4420,20 @@ libraries = {
 "": SubResource("AnimationLibrary_wujje")
 }
 
+[node name="plate_armor_shoulders_tree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wujje")
+}
+tree_root = SubResource("AnimationNodeStateMachine_ldtcy")
+anim_player = NodePath("../plate_armor_shoulders_anim")
+parameters/conditions/Idle = false
+parameters/conditions/Walk = false
+parameters/conditions/death = false
+parameters/Idle/blend_position = Vector2(-0.611825, 0.853018)
+parameters/Walk/blend_position = Vector2(-0.151819, 0.894737)
+parameters/death/blend_position = Vector2(0, 0)
+
 [node name="plate_armor_torso" type="AnimatedSprite2D" parent="."]
-visible = false
 sprite_frames = SubResource("SpriteFrames_jbf76")
 animation = &"down"
 
@@ -4064,10 +4442,39 @@ libraries = {
 "": SubResource("AnimationLibrary_6v7ee")
 }
 
+[node name="plate_armor_torso_tree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6v7ee")
+}
+tree_root = SubResource("AnimationNodeStateMachine_ldtcy")
+anim_player = NodePath("../plate_armor_torso_anim")
+parameters/conditions/Idle = false
+parameters/conditions/Walk = false
+parameters/conditions/death = false
+parameters/Idle/blend_position = Vector2(0.0276035, 0.815789)
+parameters/Walk/blend_position = Vector2(-0.151819, 0.894737)
+parameters/death/blend_position = Vector2(0, 0)
+
 [node name="plate_armor_hands" type="AnimatedSprite2D" parent="."]
-visible = false
 sprite_frames = SubResource("SpriteFrames_784tl")
-animation = &"death"
+animation = &"down"
 
 [node name="plate_armor_hands_anim" type="AnimationPlayer" parent="."]
 root_node = NodePath("../plate_armor_torso_anim")
+libraries = {
+"": SubResource("AnimationLibrary_y703a")
+}
+
+[node name="plate_armor_hands_tree" type="AnimationTree" parent="."]
+root_node = NodePath("../plate_armor_torso_anim")
+libraries = {
+"": SubResource("AnimationLibrary_y703a")
+}
+tree_root = SubResource("AnimationNodeStateMachine_ldtcy")
+anim_player = NodePath("../plate_armor_hands_anim")
+parameters/conditions/Idle = false
+parameters/conditions/Walk = false
+parameters/conditions/death = false
+parameters/Idle/blend_position = Vector2(0.0276035, 0.815789)
+parameters/Walk/blend_position = Vector2(-0.151819, 0.894737)
+parameters/death/blend_position = Vector2(0, 0)
