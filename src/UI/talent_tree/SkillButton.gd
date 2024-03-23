@@ -11,6 +11,12 @@ class_name SkillNode
 @export var max_level = 1
 var level : int = 0
 
+#private var
+var _show_tooltip = false
+
+func generate_tooltip():
+	pass
+
 func _ready():
 	if get_parent() is SkillNode:
 		Stats = get_parent().Stats
@@ -18,6 +24,10 @@ func _ready():
 		line2d.add_point(get_parent().global_position + size / 2)
 	if get_parent() is SkillTree:
 		Stats = get_parent().Stats
+	for child in get_children():
+		if child is Modifier:
+			Modifier = child
+			return
 
 func set_level(amt : int):
 	if (amt > max_level):
@@ -48,3 +58,10 @@ func _on_pressed():
 		for skill in skills_child:
 			if skill is SkillNode and level == 1:
 				skill.disabled = false
+
+
+func _on_mouse_entered():
+	_show_tooltip = true
+
+func _on_mouse_exited():
+	_show_tooltip = false

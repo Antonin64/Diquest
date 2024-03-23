@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bukxumu22e7ld"]
+[gd_scene load_steps=4 format=3 uid="uid://bukxumu22e7ld"]
 
 [ext_resource type="PackedScene" uid="uid://crded64bqwt0k" path="res://UI/talent_tree/SkillButton.tscn" id="1_do54u"]
 [ext_resource type="Script" path="res://entities/stats/SkillTree.gd" id="1_oq5li"]
+[ext_resource type="PackedScene" uid="uid://csusmptumx1mq" path="res://entities/stats/Modifier.tscn" id="3_tnt8k"]
 
 [node name="SkillTree" type="Control"]
 layout_mode = 3
@@ -16,66 +17,41 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SkillButton" parent="." instance=ExtResource("1_do54u")]
+[node name="InitialNode" parent="." instance=ExtResource("1_do54u")]
+layout_direction = 1
 layout_mode = 0
-offset_left = 535.0
-offset_top = 294.0
-offset_right = 575.0
-offset_bottom = 334.0
+offset_left = 571.0
+offset_top = 284.0
+offset_right = 611.0
+offset_bottom = 324.0
 disabled = false
 
-[node name="SkillButton" parent="SkillButton" instance=ExtResource("1_do54u")]
-layout_mode = 0
-offset_left = -76.0
-offset_top = -76.0
-offset_right = -36.0
-offset_bottom = -36.0
+[node name="Modifier" parent="InitialNode" instance=ExtResource("3_tnt8k")]
+position = Vector2(-876.805, -799.841)
+Stats = {
+"attack_speed": 0.0,
+"critical_chance": 0.0,
+"critical_damage": 0.0,
+"damage": 0.0,
+"damage_flat": 0.0,
+"damage_reduction": 0.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.0,
+"life_steal": 0.0,
+"max_health": 0.0,
+"max_health_flat": 0.0,
+"movement_speed": 1.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
 
-[node name="SkillButton2" parent="SkillButton" instance=ExtResource("1_do54u")]
-layout_mode = 0
-offset_left = 103.0
-offset_top = -83.0
-offset_right = 143.0
-offset_bottom = -43.0
-
-[node name="SkillButton3" parent="SkillButton" instance=ExtResource("1_do54u")]
-layout_mode = 0
-offset_left = 168.0
-offset_top = 13.0
-offset_right = 208.0
-offset_bottom = 53.0
-
-[node name="SkillButton4" parent="SkillButton" instance=ExtResource("1_do54u")]
-layout_mode = 0
-offset_left = 85.0
-offset_top = 106.0
-offset_right = 125.0
-offset_bottom = 146.0
-
-[node name="SkillButton5" parent="SkillButton" instance=ExtResource("1_do54u")]
-layout_mode = 0
-offset_left = -125.0
-offset_top = 98.0
-offset_right = -85.0
-offset_bottom = 138.0
-
-[node name="SkillButton" parent="SkillButton/SkillButton5" instance=ExtResource("1_do54u")]
-layout_mode = 0
-offset_left = -139.0
-offset_top = -9.0
-offset_right = -99.0
-offset_bottom = 31.0
-
-[node name="SkillButton2" parent="SkillButton/SkillButton5" instance=ExtResource("1_do54u")]
-layout_mode = 0
-offset_left = -128.0
-offset_top = -77.0
-offset_right = -88.0
-offset_bottom = -37.0
-
-[node name="SkillButton3" parent="SkillButton/SkillButton5" instance=ExtResource("1_do54u")]
-layout_mode = 0
-offset_left = -64.0
-offset_top = 94.0
-offset_right = -24.0
-offset_bottom = 134.0
+[node name="SkillButton" parent="InitialNode" instance=ExtResource("1_do54u")]
+layout_mode = 1
+offset_left = -121.0
+offset_top = -5.0
+offset_right = -81.0
+offset_bottom = 35.0

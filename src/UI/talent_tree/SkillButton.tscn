@@ -40,4 +40,13 @@ z_index = -1
 width = 3.0
 default_color = Color(0.227451, 0.227451, 0.227451, 1)
 
+[node name="TooltipPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 1.0
+offset_right = 81.0
+offset_bottom = 41.0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]
