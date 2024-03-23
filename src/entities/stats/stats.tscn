@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0look7hupshh"]
+[gd_scene load_steps=3 format=3 uid="uid://b0look7hupshh"]
 
 [ext_resource type="Script" path="res://entities/stats/stats.gd" id="1_0668p"]
+[ext_resource type="PackedScene" uid="uid://csusmptumx1mq" path="res://entities/stats/Modifier.tscn" id="2_6p6ak"]
 
 [node name="Stats" type="Node2D"]
 script = ExtResource("1_0668p")
+
+[node name="Modifier" parent="." instance=ExtResource("2_6p6ak")]
