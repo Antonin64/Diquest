@@ -38,8 +38,6 @@ func _process(_delta):
 	if not attack and agro:
 		set_walking(true)
 		update_blend_position()
-	else:
-		set_walking(false)
 	
 	if player_node != null:
 		if global_position.distance_to(player_node.global_position) < ATTACK_RANGE and not attack:
@@ -48,7 +46,9 @@ func _process(_delta):
 func set_attack(value = false):
 	if value == false:
 		handle_attack()
-	attack = value
+	else:
+		attack = true
+		animation_tree["parameters/conditions/is_walking"] = false
 	animation_tree["parameters/conditions/attack"] = value
 
 func set_death(value):
@@ -56,9 +56,9 @@ func set_death(value):
 
 func set_walking(value):
 	animation_tree["parameters/conditions/is_walking"] = value
-	animation_tree["parameters/conditions/idle"] = not value
 
 func update_blend_position():
+	animation_tree["parameters/Death/blend_position"] = direction
 	animation_tree["parameters/Attack/blend_position"] = direction
 	animation_tree["parameters/Idle/blend_position"] = direction
 	animation_tree["parameters/Walk/blend_position"] = direction
@@ -75,8 +75,11 @@ func handle_attack():
 	$Area2D.position = Vector2(0, 0)
 
 func _on_animation_tree_animation_finished(anim_name):
-	if anim_name == "Death":
-		free()
+	if anim_name.begins_with("attack"):
+		attack = false
+		animation_tree["parameters/conditions/is_walking"] = true
+	if anim_name.begins_with("death"):
+		queue_free()
 
 func create_path():
 	navigation_agent.target_position = player_node.global_position

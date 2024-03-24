@@ -1,10 +1,10 @@
-[gd_scene load_steps=118 format=3 uid="uid://dm1vo113lefv3"]
+[gd_scene load_steps=119 format=3 uid="uid://dm1vo113lefv3"]
 
 [ext_resource type="Script" path="res://Enemies/Bee/Bee.gd" id="1_od3fx"]
-[ext_resource type="Texture2D" uid="uid://qlcqpph1r1cg" path="res://Enemies/Bee/Bee_Attack.png" id="2_fxf57"]
-[ext_resource type="Texture2D" uid="uid://h4lde77hqtye" path="res://Enemies/Bee/Bee_Death.png" id="3_u0qr4"]
-[ext_resource type="Texture2D" uid="uid://c6w6vqkf0ys52" path="res://Enemies/Bee/Bee_Idle.png" id="4_ceeuj"]
-[ext_resource type="Texture2D" uid="uid://be0kdexk66fai" path="res://Enemies/Bee/Bee_Walk.png" id="5_863e0"]
+[ext_resource type="Texture2D" uid="uid://benl2en6e5jtn" path="res://Enemies/Bee/Bee_Attack.png" id="2_fxf57"]
+[ext_resource type="Texture2D" uid="uid://cgo1rio8i4hbq" path="res://Enemies/Bee/Bee_Death.png" id="3_u0qr4"]
+[ext_resource type="Texture2D" uid="uid://ytoa52pggbnf" path="res://Enemies/Bee/Bee_Idle.png" id="4_ceeuj"]
+[ext_resource type="Texture2D" uid="uid://de1wudttojebq" path="res://Enemies/Bee/Bee_Walk.png" id="5_863e0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bd03x"]
 radius = 8.0
@@ -632,37 +632,41 @@ advance_mode = 2
 advance_mode = 2
 advance_condition = &"is_walking"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ykm6s"]
-advance_mode = 2
-advance_condition = &"idle"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3w2ad"]
-advance_mode = 2
-advance_condition = &"attack"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_84bfx"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_v8e0v"]
 switch_mode = 2
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_23du5"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m4i2u"]
 advance_mode = 2
 advance_condition = &"death"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_v8e0v"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qe00r"]
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a5qo5"]
+advance_mode = 2
+advance_condition = &"death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ch8hp"]
+advance_mode = 2
+advance_condition = &"is_walking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4e1np"]
 switch_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_mwfw0"]
 states/Attack/node = SubResource("AnimationNodeBlendSpace2D_b4ma2")
-states/Attack/position = Vector2(477, 16)
+states/Attack/position = Vector2(341, 24)
 states/Death/node = SubResource("AnimationNodeBlendSpace2D_k0xe0")
 states/Death/position = Vector2(477, 192)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_fasxh")
-states/Idle/position = Vector2(477, 100)
-states/Start/position = Vector2(254, 100)
+states/Idle/position = Vector2(241, 100)
+states/Start/position = Vector2(66, 100)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_vkodb")
 states/Walk/position = Vector2(639, 100)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_eoaek"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_oe1i2"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_ykm6s"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_3w2ad"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_84bfx"), "Idle", "Death", SubResource("AnimationNodeStateMachineTransition_23du5"), "Death", "End", SubResource("AnimationNodeStateMachineTransition_v8e0v")]
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_eoaek"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_oe1i2"), "Death", "End", SubResource("AnimationNodeStateMachineTransition_v8e0v"), "Attack", "Death", SubResource("AnimationNodeStateMachineTransition_m4i2u"), "Walk", "Attack", SubResource("AnimationNodeStateMachineTransition_qe00r"), "Walk", "Death", SubResource("AnimationNodeStateMachineTransition_a5qo5"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_ch8hp"), "Attack", "Walk", SubResource("AnimationNodeStateMachineTransition_4e1np")]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qwstn"]
 atlas = ExtResource("2_fxf57")
@@ -1219,11 +1223,10 @@ tree_root = SubResource("AnimationNodeStateMachine_mwfw0")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/attack = false
 parameters/conditions/death = false
-parameters/conditions/idle = false
 parameters/conditions/is_walking = false
 parameters/Attack/blend_position = Vector2(0, 0)
-parameters/Death/blend_position = Vector2(-0.00218338, -0.00440526)
-parameters/Idle/blend_position = Vector2(-0.00218338, -0.00484574)
+parameters/Death/blend_position = Vector2(0, 0)
+parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -1231,8 +1234,8 @@ texture_filter = 1
 position = Vector2(0, 10)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_2lski")
-animation = &"idle_up"
-frame = 2
+animation = &"walk_up"
+frame = 1
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(2, 2)

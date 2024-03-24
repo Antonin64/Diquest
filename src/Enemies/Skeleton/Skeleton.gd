@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-const DAMAGE = 10
+const DAMAGE = 100
 const SPEED = 150
 const ATTACK_RANGE = 50
 const AGRO_RANGE = 300
-const BASE_HP = 5
+const BASE_HP = 800
 
 var direction : Vector2 = Vector2.ZERO
 var attack : bool = false

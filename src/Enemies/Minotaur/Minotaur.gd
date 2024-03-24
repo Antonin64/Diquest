@@ -2,18 +2,18 @@ extends CharacterBody2D
 
 const DAMAGE = 10
 const SPEED = 120
-const ATTACK_RANGE = 50
+const ATTACK_RANGE = 100
 const AGRO_RANGE = 300
-const BASE_HP = 5
+const BASE_HP = 200
 
-var target_location
 var direction : Vector2 = Vector2.ZERO
-var attack : bool = false
+var attack : int = 0
 var agro
 var hp
 var player_node
+var rng = RandomNumberGenerator.new()
 
-@onready var navigation_agent := $NavigationAgent2D as NavigationAgent2D
+@onready var navigation_agent = $NavigationAgent2D
 @onready var animation_tree = $AnimationTree
 
 func _ready():
@@ -36,27 +36,37 @@ func _process(_delta):
 	if global_position.distance_to(player_node.global_position) < AGRO_RANGE:
 		agro = true
 	
-	if global_position.distance_to(player_node.global_position) < ATTACK_RANGE and not attack:
-		set_attack(true)
-	
 	if not attack and agro:
 		set_walking(true)
 		update_blend_position()
-	else:
-		set_walking(false)
+	
+	if player_node != null:
+		if global_position.distance_to(player_node.global_position) < ATTACK_RANGE and not attack:
+			set_attack(rng.randi() % 3 + 1)
 
-func set_attack(value = false):
-	attack = value
-	animation_tree["parameters/conditions/big_attack"] = value
+func set_attack(value = 0):
+	if value != 0:
+		attack = value
+		animation_tree["parameters/conditions/is_walking"] = false
+	if attack == 1:
+		animation_tree["parameters/conditions/big_attack"] = true
+	if attack == 2:
+		animation_tree["parameters/conditions/quick_attack"] = true
+	if attack == 3:
+		animation_tree["parameters/conditions/tourbi_lol"] = true
+	if attack == 0:
+		animation_tree["parameters/conditions/big_attack"] = false
+		animation_tree["parameters/conditions/quick_attack"] = false
+		animation_tree["parameters/conditions/tourbi_lol"] = false
 
 func set_death(value):
 	animation_tree["parameters/conditions/death"] = value
 
 func set_walking(value):
 	animation_tree["parameters/conditions/is_walking"] = value
-	animation_tree["parameters/conditions/idle"] = not value
 
 func update_blend_position():
+	animation_tree["parameters/Death/blend_position"] = direction
 	animation_tree["parameters/Big_Attack/blend_position"] = direction
 	animation_tree["parameters/Quick_attack/blend_position"] = direction
 	animation_tree["parameters/Tourbi_lol/blend_position"] = direction
@@ -75,8 +85,11 @@ func handle_attack():
 	$Area2D.position = Vector2(0, 0)
 
 func _on_animation_tree_animation_finished(anim_name):
-	if anim_name == "Death":
-		free()
+	if anim_name.contains("attack") or anim_name.contains("lol"):
+		attack = 0
+		animation_tree["parameters/conditions/is_walking"] = true
+	if anim_name.begins_with("death"):
+		queue_free()
 
 func create_path():
 	navigation_agent.target_position = player_node.global_position
