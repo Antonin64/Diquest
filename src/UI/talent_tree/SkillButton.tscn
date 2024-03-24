@@ -28,6 +28,7 @@ offset_bottom = 40.0
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_btobi")
 theme_override_font_sizes/font_size = 10
 text = "0/0"
@@ -42,24 +43,65 @@ default_color = Color(0.227451, 0.227451, 0.227451, 1)
 
 [node name="TooltipPanel" type="Panel" parent="."]
 visible = false
-layout_mode = 0
-offset_left = 45.0
-offset_top = -75.0
-offset_right = 85.0
-offset_bottom = -35.0
-scale = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 49.0
+offset_top = -9.0
+offset_right = 49.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.48, 3.04)
+mouse_filter = 2
 
 [node name="BoxContainer" type="BoxContainer" parent="TooltipPanel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 vertical = true
 
 [node name="Label" type="Label" parent="TooltipPanel/BoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_btobi")
 theme_override_font_sizes/font_size = 3
-text = "some stat idk"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="TooltipPanel/BoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_btobi")
+theme_override_font_sizes/font_size = 3
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="TooltipPanel/BoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_btobi")
+theme_override_font_sizes/font_size = 3
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="TooltipPanel/BoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_btobi")
+theme_override_font_sizes/font_size = 3
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="TooltipPanel/BoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_btobi")
+theme_override_font_sizes/font_size = 3
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="TooltipPanel/BoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_btobi")
+theme_override_font_sizes/font_size = 3
+horizontal_alignment = 1
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

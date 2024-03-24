@@ -6,28 +6,47 @@ class_name SkillNode
 @onready var label  = $MarginContainer/Label
 @onready var line2d = $Line2D
 @onready var tooltip = $TooltipPanel
+@onready var labels = [
+	$TooltipPanel/BoxContainer/Label,
+	$TooltipPanel/BoxContainer/Label2,
+	$TooltipPanel/BoxContainer/Label3,
+	$TooltipPanel/BoxContainer/Label4,
+	$TooltipPanel/BoxContainer/Label5,
+	$TooltipPanel/BoxContainer/Label6,
+]
 
 @export var Stats : Node2D
 @export var Modifier : Modifiers
 @export var max_level = 1
+
 var level : int = 0
 
 #private var
 var _show_tooltip = false
 
 func generate_tooltip():
-	pass
+	var statnb = 0
+	for stat in Modifier.Stats.keys():
+		if Modifier.Stats[stat] > 0:
+			if (Modifier.Stats_Range.has(stat)):
+				labels[statnb].text = "+" + str(Modifier.Stats[stat]) + Modifier.Stats_Range[stat][2] + " " + stat
+				statnb += 1
+	label.text = str(level) + "/" + str(max_level)
 
 func _ready():
-	if get_parent() is SkillNode:
-		Stats = get_parent().Stats
-		line2d.add_point(global_position + size / 2)
-		line2d.add_point(get_parent().global_position + size / 2)
 	if get_parent() is SkillTree:
 		Stats = get_parent().Stats
+	if get_parent() is SkillNode:
+		var parent = get_parent()
+		while (parent is SkillNode):
+			parent = parent.get_parent()
+		Stats = parent.Stats
+		line2d.add_point(global_position + size / 2)
+		line2d.add_point(get_parent().global_position + size / 2)
 	for child in get_children():
 		if child is Modifiers:
 			Modifier = child
+			generate_tooltip()
 			return
 
 func set_level(amt : int):
@@ -57,8 +76,9 @@ func _on_pressed():
 		
 		var skills_child = get_children()
 		for skill in skills_child:
-			if skill is SkillNode and level == 1:
+			if skill is SkillNode and level >= 1:
 				skill.disabled = false
+		Stats.add_modifier(hash(name + str(level)), Modifier)
 
 
 func _on_mouse_entered():

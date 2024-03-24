@@ -29,102 +29,131 @@ func get_health():
 	
 func get_max_health():
 	var num = max_health
+	var stats
 	for modifier in modifiers:
-		if modifier.has("max_health_flat"):
-			num += modifier["max_health_flat"]
+		stats = modifiers[modifier].Stats
+		if stats.has("max_health_flat"):
+			num += stats["max_health_flat"]
 	for modifier in modifiers:
-		if modifier.has("max_health"):
-			num *= modifier["max_health"]
+		stats = modifiers[modifier].Stats
+		if stats.has("max_health"):
+			num *= stats["max_health"]
 	return num
 	
 func get_damage():
 	var num = damage
+	var stats
 	for modifier in modifiers:
-		if modifier.has("damage_flat"):
-			num += modifier["damage_flat"]
+		stats = modifiers[modifier].Stats
+		if stats.has("damage_flat"):
+			num += stats["damage_flat"]
 	for modifier in modifiers:
-		if modifier.has("damage"):
-			num *= modifier["damage"]
+		stats = modifiers[modifier].Stats
+		if stats.has("damage"):
+			num *= stats["damage"]
 	return num
 	
 func get_attack_speed():
 	var num = attack_speed
+	var stats
 	for modifier in modifiers:
-		if modifier.has("attack_speed"):
-			num *= modifier["attack_speed"]
+		stats = modifiers[modifier].Stats
+		if stats.has("attack_speed"):
+			num *= stats["attack_speed"]
 	return num
 
 func get_life_regen():
 	var num = life_regen
+	var stats
 	for modifier in modifiers:
-		if modifier.has("life_regen"):
-			num += modifier["life_regen"]
+		stats = modifiers[modifier].Stats
+		if stats.has("life_regen"):
+			num += stats["life_regen"]
 	return num
 	
 func get_stamina_regen():
 	var num = stamina_regen
+	var stats
 	for modifier in modifiers:
-		if modifier.has("stamina_regen"):
-			num += modifier["stamina_regen"]
+		stats = modifiers[modifier].Stats
+		if stats.has("stamina_regen"):
+			num += stats["stamina_regen"]
 	return num
 
 func get_stamina():
 	var num = stamina
+	var stats
 	for modifier in modifiers:
-		if modifier.has("stamina_flat"):
-			num += modifier["stamina_flat"]
+		stats = modifiers[modifier].Stats
+		if stats.has("stamina_flat"):
+			num += stats["stamina_flat"]
 	for modifier in modifiers:
-		if modifier.has("stamina"):
-			num *= modifier["stamina"]
+		stats = modifiers[modifier].Stats
+		if stats.has("stamina"):
+			num *= stats["stamina"]
 	return num
 
 func get_projectiles_count():
 	var num = 1
+	var stats
 	for modifier in modifiers:
-		if modifier.has("projectile_number"):
-			num += modifier["projectile_number"]
+		stats = modifiers[modifier].Stats
+		if stats.has("projectile_number"):
+			num += stats["projectile_number"]
 	return num
 
 func get_life_steal():
 	var num = 0
+	var stats
 	for modifier in modifiers:
-		if modifier.has("life_steal"):
-			num += modifier["life_steal"]
+		stats = modifiers[modifier].Stats
+		if stats.has("life_steal"):
+			num += stats["life_steal"]
 	return num
 
 func get_life_gain_on_hit():
 	var num = 0
+	var stats
 	for modifier in modifiers:
-		if modifier.has("life_gain_on_hit"):
-			num += modifier["life_gain_on_hit"]
+		stats = modifiers[modifier].Stats
+		if stats.has("life_gain_on_hit"):
+			num += stats["life_gain_on_hit"]
 	return num
 
 func get_movement_speed_modifier():
-	var num = 1
+	var num = 0
+	var stats
 	for modifier in modifiers:
-		if modifier.has("movement_speed"):
-			num += modifier["movement_speed"]
+		stats = modifiers[modifier].Stats
+		if stats.has("movement_speed"):
+			num += stats["movement_speed"]
 	return num
 	
 func get_critical_chance():
 	var num = critical_chance
+	var stats
 	for modifier in modifiers:
-		if modifier.has("critical_chance"):
-			num += modifier["critical_chance"]
+		stats = modifiers[modifier].Stats
+		if stats.has("critical_chance"):
+			num += stats["critical_chance"]
 	return num
 
 func get_critical_damage():
 	var num = critical_damage
+	var stats
 	for modifier in modifiers:
-		if modifier.has("critical_damage"):
-			num += critical_damage
+		stats = modifiers[modifier].Stats
+		if modifier.Stats.has("critical_damage"):
+			num += modifier.Stats["critical_damage"]
 	return num
 	
 func get_damage_reduction():
 	var num = 0
+	var stats
 	for modifier in modifiers:
-		if modifier.has("damage_reduction"):
-			num += modifier["damage_reduction"]
+		stats = modifiers[modifier].Stats
+		if modifier.Stats.has("damage_reduction"):
+			num += modifier.Stats["damage_reduction"]
 	return num
 
 func get_energy():
@@ -158,6 +187,7 @@ func set_max_health(amt):
 
 func add_modifier(id, modifier):
 	modifiers[id] = modifier
+	print(get_movement_speed_modifier())
 	
 func add_energy(amt):
 	if energy + amt > stamina:

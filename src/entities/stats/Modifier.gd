@@ -24,25 +24,28 @@ class_name Modifiers
 }
 
 @export var Stats_Range = {
-	"max_health" : [5, 10],
-	"max_health_flat" : [5, 10],
-	"damage_flat" : [1, 2],
-	"damage" : [5, 10],
-	"poison_dmg" : [0.2, 0.4],
-	"poison_tick_speed" : [1.05, 1.07],
-	"attack_speed" : [1.04, 1.06],
-	"life_regen" : [0.5, 0.7],
-	"stamina_regen" : [0.03, 0.05],
-	"stamina_flat" : [0.4, 0.7],
-	"stamina" : [1.1, 1.2],
-	"projectile_number" : [1, 1],
-	"life_steal" : [5, 7],
-	"life_gain_on_hit" : [1, 2],
-	"movement_speed" : [3, 7],
-	"critical_chance" : [3, 5],
-	"critical_damage" : [5, 10],
-	"damage_reduction" : [1, 3],
+	"max_health" : [5, 10, "%"],
+	"max_health_flat" : [5, 10, ""],
+	"damage_flat" : [1, 2, ""],
+	"damage" : [5, 10, "%"],
+	"poison_dmg" : [0.2, 0.4, ""],
+	"poison_tick_speed" : [1.05, 1.07, "%"],
+	"attack_speed" : [1.04, 1.06, "%"],
+	"life_regen" : [0.5, 0.7, ""],
+	"stamina_regen" : [0.03, 0.05, ""],
+	"stamina_flat" : [0.4, 0.7, ""],
+	"stamina" : [1.1, 1.2, "%"],
+	"projectile_number" : [1, 1, ""],
+	"life_steal" : [5, 7, "%"],
+	"life_gain_on_hit" : [1, 2, ""],
+	"movement_speed" : [3, 7, "%"],
+	"critical_chance" : [3, 5, "%"],
+	"critical_damage" : [5, 10, "%"],
+	"damage_reduction" : [1, 3, "%"],
 }
+
+@export var rarity : String
+@export var texture : String
 
 var rng  = RandomNumberGenerator.new()
 
