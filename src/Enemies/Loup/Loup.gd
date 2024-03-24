@@ -50,9 +50,10 @@ func set_attack(value = false):
 	animation_tree["parameters/conditions/attack"] = value
 
 func set_death(value):
-	player_node.earn_gold(300)
-	player_node.earn_xp(300)
-	animation_tree["parameters/conditions/death"] = value
+	if animation_tree["parameters/conditions/death"] == false:
+		player_node.earn_gold(300)
+		player_node.earn_xp(300)
+		animation_tree["parameters/conditions/death"] = value
 
 func set_walking(value):
 	animation_tree["parameters/conditions/is_walking"] = value
