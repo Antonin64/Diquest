@@ -36,4 +36,98 @@ offset_bottom = -324.0
 Player = NodePath("..")
 
 [node name="Weapons" parent="." instance=ExtResource("6_pit7j")]
+position = Vector2(0, 18)
 scale = Vector2(0.3, 0.3)
+
+[node name="Inventory_UI" type="Node2D" parent="."]
+
+[node name="slot1" type="Button" parent="Inventory_UI"]
+offset_left = -386.0
+offset_top = 158.0
+offset_right = -250.0
+offset_bottom = 294.0
+scale = Vector2(0.4, 0.4)
+action_mode = 0
+
+[node name="slot2" type="Button" parent="Inventory_UI"]
+offset_left = -312.0
+offset_top = 158.0
+offset_right = -176.0
+offset_bottom = 294.0
+scale = Vector2(0.4, 0.4)
+action_mode = 0
+
+[node name="slot3" type="Button" parent="Inventory_UI"]
+offset_left = -231.0
+offset_top = 158.0
+offset_right = -95.0
+offset_bottom = 294.0
+scale = Vector2(0.4, 0.4)
+action_mode = 0
+
+[node name="slot4" type="Button" parent="Inventory_UI"]
+offset_left = -149.0
+offset_top = 158.0
+offset_right = -13.0
+offset_bottom = 294.0
+scale = Vector2(0.4, 0.4)
+action_mode = 0
+
+[node name="slot5" type="Button" parent="Inventory_UI"]
+offset_left = -71.0
+offset_top = 158.0
+offset_right = 65.0
+offset_bottom = 294.0
+scale = Vector2(0.4, 0.4)
+action_mode = 0
+
+[node name="slot6" type="Button" parent="Inventory_UI"]
+offset_left = 11.0
+offset_top = 158.0
+offset_right = 147.0
+offset_bottom = 294.0
+scale = Vector2(0.4, 0.4)
+action_mode = 0
+
+[node name="slot7" type="Button" parent="Inventory_UI"]
+offset_left = 89.0
+offset_top = 158.0
+offset_right = 225.0
+offset_bottom = 294.0
+scale = Vector2(0.4, 0.4)
+action_mode = 0
+
+[node name="slot8" type="Button" parent="Inventory_UI"]
+offset_left = 168.0
+offset_top = 158.0
+offset_right = 304.0
+offset_bottom = 294.0
+scale = Vector2(0.4, 0.4)
+action_mode = 0
+
+[node name="slot9" type="Button" parent="Inventory_UI"]
+offset_left = 248.0
+offset_top = 158.0
+offset_right = 384.0
+offset_bottom = 294.0
+scale = Vector2(0.4, 0.4)
+action_mode = 0
+
+[node name="slot10" type="Button" parent="Inventory_UI"]
+offset_left = 328.0
+offset_top = 158.0
+offset_right = 464.0
+offset_bottom = 294.0
+scale = Vector2(0.4, 0.4)
+action_mode = 0
+
+[connection signal="pressed" from="Inventory_UI/slot1" to="." method="_on_slot_1_pressed"]
+[connection signal="pressed" from="Inventory_UI/slot2" to="." method="_on_slot_2_pressed"]
+[connection signal="pressed" from="Inventory_UI/slot3" to="." method="_on_slot_3_pressed"]
+[connection signal="pressed" from="Inventory_UI/slot4" to="." method="_on_slot_4_pressed"]
+[connection signal="pressed" from="Inventory_UI/slot5" to="." method="_on_slot_5_pressed"]
+[connection signal="pressed" from="Inventory_UI/slot6" to="." method="_on_slot_6_pressed"]
+[connection signal="pressed" from="Inventory_UI/slot7" to="." method="_on_slot_7_pressed"]
+[connection signal="pressed" from="Inventory_UI/slot8" to="." method="_on_slot_8_pressed"]
+[connection signal="pressed" from="Inventory_UI/slot9" to="." method="_on_slot_9_pressed"]
+[connection signal="pressed" from="Inventory_UI/slot10" to="." method="_on_slot_10_pressed"]

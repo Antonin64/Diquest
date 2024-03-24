@@ -1,8 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://bukxumu22e7ld"]
+[gd_scene load_steps=18 format=3 uid="uid://bukxumu22e7ld"]
 
 [ext_resource type="PackedScene" uid="uid://crded64bqwt0k" path="res://UI/talent_tree/SkillButton.tscn" id="1_do54u"]
 [ext_resource type="Script" path="res://entities/stats/SkillTree.gd" id="1_oq5li"]
+[ext_resource type="Texture2D" uid="uid://bctk4j3cikcas" path="res://world/assets/ui/talent_tree/Barbarian_32.png" id="3_qn6dj"]
 [ext_resource type="PackedScene" uid="uid://csusmptumx1mq" path="res://entities/stats/Modifier.tscn" id="3_tnt8k"]
+[ext_resource type="Texture2D" uid="uid://bvvnlfvt7g6to" path="res://world/assets/ui/talent_tree/Barbarian_22.png" id="5_ritlx"]
+[ext_resource type="Texture2D" uid="uid://ckhs4h440xygi" path="res://world/assets/ui/talent_tree/Barbarian_16.png" id="6_u7rjr"]
+[ext_resource type="Texture2D" uid="uid://co2wbuhthwr2u" path="res://world/assets/ui/talent_tree/Barbarian_31.png" id="7_6cn1g"]
+[ext_resource type="Texture2D" uid="uid://c86nkw0n5ms7k" path="res://world/assets/ui/talent_tree/Barbarian_12.png" id="8_h72rr"]
+[ext_resource type="Texture2D" uid="uid://bswl5gssgu3pu" path="res://world/assets/ui/talent_tree/Barbarian_33.png" id="9_tn0el"]
+[ext_resource type="Texture2D" uid="uid://gr2odo1mkpaf" path="res://world/assets/ui/talent_tree/Barbarian_3.png" id="10_dp1h7"]
+[ext_resource type="Texture2D" uid="uid://bpetf6cw6s38l" path="res://world/assets/ui/talent_tree/Barbarian_9.png" id="11_4duwm"]
+[ext_resource type="Texture2D" uid="uid://dvkrioovtajyp" path="res://world/assets/ui/talent_tree/Barbarian_6.png" id="12_w4s4h"]
+[ext_resource type="Texture2D" uid="uid://b6y563xw72w2v" path="res://world/assets/ui/talent_tree/Barbarian_18.png" id="13_s0t56"]
+[ext_resource type="Texture2D" uid="uid://cu3smtf05jn8e" path="res://world/assets/ui/talent_tree/Barbarian_1.png" id="14_ofsvt"]
+[ext_resource type="Texture2D" uid="uid://b8wimtknj3gsj" path="res://world/assets/ui/talent_tree/Barbarian_25.png" id="15_1rxro"]
+[ext_resource type="Texture2D" uid="uid://csbt6btvoc3kg" path="res://world/assets/ui/talent_tree/Barbarian_15.png" id="16_4jaty"]
+[ext_resource type="Texture2D" uid="uid://bvij7t6oe6fpr" path="res://world/assets/ui/talent_tree/Barbarian_23.png" id="16_ku0tf"]
 
 [node name="SkillTree" type="Control"]
 layout_mode = 3
@@ -25,6 +39,7 @@ offset_top = 284.0
 offset_right = 603.0
 offset_bottom = 324.0
 disabled = false
+texture_normal = ExtResource("3_qn6dj")
 
 [node name="Modifier" parent="InitialNode" instance=ExtResource("3_tnt8k")]
 Stats = {
@@ -54,6 +69,7 @@ offset_left = -93.0
 offset_top = 4.0
 offset_right = -53.0
 offset_bottom = 44.0
+texture_normal = ExtResource("5_ritlx")
 
 [node name="Modifier" parent="InitialNode/CritDmg" instance=ExtResource("3_tnt8k")]
 Stats = {
@@ -83,6 +99,7 @@ offset_left = -94.0
 offset_top = -3.0
 offset_right = -54.0
 offset_bottom = 37.0
+texture_normal = ExtResource("6_u7rjr")
 
 [node name="Modifier" parent="InitialNode/CritDmg/CritChance1" instance=ExtResource("3_tnt8k")]
 position = Vector2(1, 0)
@@ -113,6 +130,7 @@ offset_left = 30.0
 offset_top = -82.0
 offset_right = 70.0
 offset_bottom = -42.0
+texture_normal = ExtResource("6_u7rjr")
 
 [node name="Modifier" parent="InitialNode/CritDmg/CritChance1/CritChance2" instance=ExtResource("3_tnt8k")]
 position = Vector2(1, 0)
@@ -143,6 +161,7 @@ offset_left = 102.0
 offset_top = -23.0
 offset_right = 142.0
 offset_bottom = 17.0
+texture_normal = ExtResource("7_6cn1g")
 max_level = 5
 
 [node name="Modifier" parent="InitialNode/CritDmg/CritChance1/CritChance2/Dmg" instance=ExtResource("3_tnt8k")]
@@ -173,6 +192,7 @@ offset_left = 96.0
 offset_top = -25.0
 offset_right = 136.0
 offset_bottom = 15.0
+texture_normal = ExtResource("7_6cn1g")
 max_level = 2
 
 [node name="Modifier" parent="InitialNode/CritDmg/CritChance1/CritChance2/Dmg/Dmg2" instance=ExtResource("3_tnt8k")]
@@ -203,6 +223,7 @@ offset_left = -70.0
 offset_top = -45.0
 offset_right = -30.0
 offset_bottom = -5.0
+texture_normal = ExtResource("8_h72rr")
 max_level = 2
 
 [node name="Modifier" parent="InitialNode/CritDmg/CritChance1/CritChance2/HealthRegen1" instance=ExtResource("3_tnt8k")]
@@ -233,6 +254,7 @@ offset_left = -84.0
 offset_top = 32.0
 offset_right = -44.0
 offset_bottom = 72.0
+texture_normal = ExtResource("9_tn0el")
 max_level = 3
 
 [node name="Modifier" parent="InitialNode/CritDmg/CritChance1/CritChance2/HealthRegen1/LifeSteal1" instance=ExtResource("3_tnt8k")]
@@ -263,6 +285,7 @@ offset_left = -53.0
 offset_top = 51.0
 offset_right = -13.0
 offset_bottom = 91.0
+texture_normal = ExtResource("9_tn0el")
 max_level = 3
 
 [node name="Modifier" parent="InitialNode/CritDmg/CritChance1/CritChance2/HealthRegen1/LifeSteal1/LifeSteal2" instance=ExtResource("3_tnt8k")]
@@ -293,6 +316,7 @@ offset_left = 73.0
 offset_top = 53.0
 offset_right = 113.0
 offset_bottom = 93.0
+texture_normal = ExtResource("7_6cn1g")
 max_level = 7
 
 [node name="Modifier" parent="InitialNode/CritDmg/CritChance1/CritChance2/HealthRegen1/LifeSteal1/LifeSteal2/Dmg6" instance=ExtResource("3_tnt8k")]
@@ -323,6 +347,7 @@ offset_left = -50.0
 offset_top = -65.0
 offset_right = -10.0
 offset_bottom = -25.0
+texture_normal = ExtResource("10_dp1h7")
 max_level = 4
 
 [node name="Modifier" parent="InitialNode/CritDmg/CritChance1/CritChance2/HealthRegen1/LifeSteal1/LifeSteal2/TankyBoi1" instance=ExtResource("3_tnt8k")]
@@ -353,6 +378,7 @@ offset_left = 74.0
 offset_top = -63.0
 offset_right = 114.0
 offset_bottom = -23.0
+texture_normal = ExtResource("3_qn6dj")
 
 [node name="Modifier" parent="InitialNode/CritDmg/CritChance1/CritChance2/HealthRegen1/LifeSteal1/LifeSteal2/TankyBoi1/MovementSpeed7" instance=ExtResource("3_tnt8k")]
 Stats = {
@@ -382,6 +408,7 @@ offset_left = 104.0
 offset_top = -30.0
 offset_right = 144.0
 offset_bottom = 10.0
+texture_normal = ExtResource("6_u7rjr")
 max_level = 4
 
 [node name="Modifier" parent="InitialNode/CritDmg/CritChance1/CritChance2/HealthRegen1/LifeSteal1/LifeSteal2/TankyBoi1/MovementSpeed7/CriticalChance3" instance=ExtResource("3_tnt8k")]
@@ -413,6 +440,7 @@ offset_left = -26.0
 offset_top = 74.0
 offset_right = 14.0
 offset_bottom = 114.0
+texture_normal = ExtResource("5_ritlx")
 
 [node name="Modifier" parent="InitialNode/CritDmg/CritDmg2" instance=ExtResource("3_tnt8k")]
 Stats = {
@@ -442,6 +470,7 @@ offset_left = -38.0
 offset_top = 77.0
 offset_right = 2.0
 offset_bottom = 117.0
+texture_normal = ExtResource("5_ritlx")
 
 [node name="Modifier" parent="InitialNode/CritDmg/CritDmg2/CritDmg3" instance=ExtResource("3_tnt8k")]
 Stats = {
@@ -471,6 +500,7 @@ offset_left = -84.0
 offset_top = -14.0
 offset_right = -44.0
 offset_bottom = 26.0
+texture_normal = ExtResource("3_qn6dj")
 
 [node name="Modifier" parent="InitialNode/CritDmg/CritDmg2/CritDmg3/MovementSpeed8" instance=ExtResource("3_tnt8k")]
 position = Vector2(53.4326, -136.291)
@@ -501,6 +531,7 @@ offset_left = -81.0
 offset_top = -30.0
 offset_right = -41.0
 offset_bottom = 10.0
+texture_normal = ExtResource("10_dp1h7")
 
 [node name="Modifier" parent="InitialNode/CritDmg/CritDmg2/CritDmg3/MovementSpeed8/maxhealth3" instance=ExtResource("3_tnt8k")]
 position = Vector2(134.433, -106.291)
@@ -531,6 +562,7 @@ offset_left = -64.0
 offset_top = -51.0
 offset_right = -24.0
 offset_bottom = -11.0
+texture_normal = ExtResource("11_4duwm")
 
 [node name="Modifier" parent="InitialNode/CritDmg/CritDmg2/CritDmg3/MovementSpeed8/maxhealth3/MoreProjectile" instance=ExtResource("3_tnt8k")]
 Stats = {
@@ -560,6 +592,7 @@ offset_left = -52.0
 offset_top = -69.0
 offset_right = -12.0
 offset_bottom = -29.0
+texture_normal = ExtResource("12_w4s4h")
 max_level = 3
 
 [node name="Modifier" parent="InitialNode/CritDmg/CritDmg2/CritDmg3/MovementSpeed8/maxhealth3/MoreProjectile/Stamina6" instance=ExtResource("3_tnt8k")]
@@ -590,6 +623,7 @@ offset_left = 3.0
 offset_top = 131.0
 offset_right = 43.0
 offset_bottom = 171.0
+texture_normal = ExtResource("15_1rxro")
 
 [node name="Modifier" parent="InitialNode/CritDmg/CritDmg2/CritDmg3/MovementSpeed8/maxhealth3/MoreProjectile/Stamina6/DamageRed" instance=ExtResource("3_tnt8k")]
 position = Vector2(247.433, -117.291)
@@ -620,6 +654,7 @@ offset_left = 60.0
 offset_top = 71.0
 offset_right = 100.0
 offset_bottom = 111.0
+texture_normal = ExtResource("13_s0t56")
 
 [node name="Modifier" parent="InitialNode/CritDmg/CritDmg2/CritDmg3/MovementSpeed8/maxhealth3/MoreProjectile/Stamina6/DamageRed/AttackSpeed4" instance=ExtResource("3_tnt8k")]
 Stats = {
@@ -649,6 +684,7 @@ offset_left = 76.0
 offset_top = 55.0
 offset_right = 116.0
 offset_bottom = 95.0
+texture_normal = ExtResource("3_qn6dj")
 max_level = 100
 
 [node name="Modifier2" parent="InitialNode/CritDmg/CritDmg2/CritDmg3/MovementSpeed8/maxhealth3/MoreProjectile/Stamina6/DamageRed/AttackSpeed4/UltimateSpeed" instance=ExtResource("3_tnt8k")]
@@ -679,6 +715,7 @@ offset_left = 74.0
 offset_top = -57.0
 offset_right = 114.0
 offset_bottom = -17.0
+texture_normal = ExtResource("3_qn6dj")
 
 [node name="Modifier" parent="InitialNode/MovementSpeed" instance=ExtResource("3_tnt8k")]
 position = Vector2(-1, 0)
@@ -709,6 +746,7 @@ offset_left = 79.0
 offset_top = 37.0
 offset_right = 119.0
 offset_bottom = 77.0
+texture_normal = ExtResource("3_qn6dj")
 max_level = 3
 
 [node name="MovementSpeedDebuff" parent="InitialNode/MovementSpeed/Movement4" instance=ExtResource("1_do54u")]
@@ -717,6 +755,7 @@ offset_left = 83.0
 offset_top = -66.0
 offset_right = 123.0
 offset_bottom = -26.0
+texture_normal = ExtResource("3_qn6dj")
 
 [node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/MovementSpeedDebuff" instance=ExtResource("3_tnt8k")]
 Stats = {
@@ -746,6 +785,7 @@ offset_left = 93.0
 offset_top = -36.0
 offset_right = 133.0
 offset_bottom = 4.0
+texture_normal = ExtResource("10_dp1h7")
 max_level = 1000
 
 [node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/MovementSpeedDebuff/UltimateHealth" instance=ExtResource("3_tnt8k")]
@@ -777,6 +817,7 @@ offset_left = -62.0
 offset_top = -69.0
 offset_right = -22.0
 offset_bottom = -29.0
+texture_normal = ExtResource("6_u7rjr")
 
 [node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/MovementSpeedDebuff/CritChance8" instance=ExtResource("3_tnt8k")]
 position = Vector2(-361.567, 159.709)
@@ -807,6 +848,7 @@ offset_left = -99.0
 offset_top = -51.0
 offset_right = -59.0
 offset_bottom = -11.0
+texture_normal = ExtResource("5_ritlx")
 
 [node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/MovementSpeedDebuff/CritChance8/CritDmg11" instance=ExtResource("3_tnt8k")]
 position = Vector2(-262.567, 210.709)
@@ -837,6 +879,7 @@ offset_left = -111.0
 offset_top = 11.0
 offset_right = -71.0
 offset_bottom = 51.0
+texture_normal = ExtResource("8_h72rr")
 
 [node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/MovementSpeedDebuff/CritChance8/CritDmg11/StaminaRegen3" instance=ExtResource("3_tnt8k")]
 position = Vector2(-151.567, 199.709)
@@ -867,6 +910,7 @@ offset_left = -93.0
 offset_top = 28.0
 offset_right = -53.0
 offset_bottom = 68.0
+texture_normal = ExtResource("14_ofsvt")
 max_level = 500
 
 [node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/MovementSpeedDebuff/CritChance8/CritDmg11/StaminaRegen3/UltimateNodes" instance=ExtResource("3_tnt8k")]
@@ -920,6 +964,7 @@ offset_left = 49.0
 offset_top = 80.0
 offset_right = 89.0
 offset_bottom = 120.0
+texture_normal = ExtResource("15_1rxro")
 max_level = 10
 
 [node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/DmgRed1" instance=ExtResource("3_tnt8k")]
@@ -950,6 +995,7 @@ offset_left = 31.0
 offset_top = 86.0
 offset_right = 71.0
 offset_bottom = 126.0
+texture_normal = ExtResource("3_qn6dj")
 max_level = 6
 
 [node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/DmgRed1/MoveSpeed5" instance=ExtResource("3_tnt8k")]
@@ -980,6 +1026,7 @@ offset_left = -76.0
 offset_top = 84.0
 offset_right = -36.0
 offset_bottom = 124.0
+texture_normal = ExtResource("16_ku0tf")
 max_level = 250
 
 [node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/DmgRed1/MoveSpeed5/UltimateDamage" instance=ExtResource("3_tnt8k")]
@@ -1011,6 +1058,7 @@ offset_left = 173.0
 offset_top = -17.0
 offset_right = 213.0
 offset_bottom = 23.0
+texture_normal = ExtResource("10_dp1h7")
 
 [node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/DmgRed1/MoveSpeed5/UltimateDamage/MaxHealth8" instance=ExtResource("3_tnt8k")]
 position = Vector2(-517.567, -208.291)
@@ -1041,6 +1089,7 @@ offset_left = -82.0
 offset_top = 15.0
 offset_right = -42.0
 offset_bottom = 55.0
+texture_normal = ExtResource("8_h72rr")
 max_level = 2
 
 [node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/DmgRed1/HealthRegen5" instance=ExtResource("3_tnt8k")]
@@ -1072,6 +1121,7 @@ offset_left = 123.0
 offset_top = -22.0
 offset_right = 163.0
 offset_bottom = 18.0
+texture_normal = ExtResource("6_u7rjr")
 
 [node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/DmgRed1/CritChance4" instance=ExtResource("3_tnt8k")]
 position = Vector2(-512.567, -33.2906)
@@ -1102,6 +1152,7 @@ offset_left = 27.0
 offset_top = 84.0
 offset_right = 67.0
 offset_bottom = 124.0
+texture_normal = ExtResource("6_u7rjr")
 max_level = 100
 
 [node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/DmgRed1/CritChance4/CritChanceUltimate" instance=ExtResource("3_tnt8k")]
@@ -1132,6 +1183,7 @@ offset_left = 7.0
 offset_top = -79.0
 offset_right = 47.0
 offset_bottom = -39.0
+texture_normal = ExtResource("5_ritlx")
 max_level = 25
 
 [node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/DmgRed1/CritChance4/CritDmgUltimate" instance=ExtResource("3_tnt8k")]
@@ -1163,6 +1215,7 @@ offset_left = 24.0
 offset_top = 70.0
 offset_right = 64.0
 offset_bottom = 110.0
+texture_normal = ExtResource("12_w4s4h")
 
 [node name="Modifier2" parent="InitialNode/Stamina" instance=ExtResource("3_tnt8k")]
 position = Vector2(2, 1)
@@ -1193,6 +1246,7 @@ offset_left = 46.0
 offset_top = 75.0
 offset_right = 86.0
 offset_bottom = 115.0
+texture_normal = ExtResource("12_w4s4h")
 max_level = 2
 
 [node name="Modifier2" parent="InitialNode/Stamina/Stamina2" instance=ExtResource("3_tnt8k")]
@@ -1224,6 +1278,7 @@ offset_left = -57.0
 offset_top = 66.0
 offset_right = -17.0
 offset_bottom = 106.0
+texture_normal = ExtResource("15_1rxro")
 
 [node name="Modifier" parent="InitialNode/Stamina/Stamina2/DmgRed3" instance=ExtResource("3_tnt8k")]
 position = Vector2(-200.567, -206.291)
@@ -1254,6 +1309,7 @@ offset_left = -93.0
 offset_top = 47.0
 offset_right = -53.0
 offset_bottom = 87.0
+texture_normal = ExtResource("9_tn0el")
 max_level = 20
 
 [node name="Modifier" parent="InitialNode/Stamina/Stamina2/DmgRed3/LifeStealUltimate" instance=ExtResource("3_tnt8k")]
@@ -1285,6 +1341,7 @@ offset_left = -109.0
 offset_top = 4.0
 offset_right = -69.0
 offset_bottom = 44.0
+texture_normal = ExtResource("16_4jaty")
 
 [node name="Modifier" parent="InitialNode/Stamina/Stamina2/DmgRed3/LifeStealUltimate/TrueDmg1" instance=ExtResource("3_tnt8k")]
 position = Vector2(1.43256, -257.291)
@@ -1315,6 +1372,7 @@ offset_left = -116.0
 offset_top = 1.0
 offset_right = -76.0
 offset_bottom = 41.0
+texture_normal = ExtResource("13_s0t56")
 max_level = 100
 
 [node name="Modifier" parent="InitialNode/Stamina/Stamina2/AttackSpeedUltimate" instance=ExtResource("3_tnt8k")]
