@@ -1,10 +1,10 @@
 [gd_scene load_steps=119 format=3 uid="uid://dm1vo113lefv3"]
 
 [ext_resource type="Script" path="res://Enemies/Bee/Bee.gd" id="1_od3fx"]
-[ext_resource type="Texture2D" uid="uid://legbbjp4vopb" path="res://Enemies/Bee/Bee_Attack.png" id="2_fxf57"]
-[ext_resource type="Texture2D" uid="uid://cqbydmlqoqv8i" path="res://Enemies/Bee/Bee_Death.png" id="3_u0qr4"]
-[ext_resource type="Texture2D" uid="uid://4mepm3rp55oy" path="res://Enemies/Bee/Bee_Idle.png" id="4_ceeuj"]
-[ext_resource type="Texture2D" uid="uid://ciwuu3wsvr17t" path="res://Enemies/Bee/Bee_Walk.png" id="5_863e0"]
+[ext_resource type="Texture2D" uid="uid://benl2en6e5jtn" path="res://Enemies/Bee/Bee_Attack.png" id="2_fxf57"]
+[ext_resource type="Texture2D" uid="uid://cgo1rio8i4hbq" path="res://Enemies/Bee/Bee_Death.png" id="3_u0qr4"]
+[ext_resource type="Texture2D" uid="uid://ytoa52pggbnf" path="res://Enemies/Bee/Bee_Idle.png" id="4_ceeuj"]
+[ext_resource type="Texture2D" uid="uid://de1wudttojebq" path="res://Enemies/Bee/Bee_Walk.png" id="5_863e0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bd03x"]
 radius = 8.0
@@ -658,7 +658,7 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_mwfw0"]
 states/Attack/node = SubResource("AnimationNodeBlendSpace2D_b4ma2")
-states/Attack/position = Vector2(437, 166)
+states/Attack/position = Vector2(437, 167)
 states/Death/node = SubResource("AnimationNodeBlendSpace2D_k0xe0")
 states/Death/position = Vector2(621, 100)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_fasxh")
@@ -1234,13 +1234,14 @@ texture_filter = 1
 position = Vector2(0, 10)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_2lski")
-animation = &"idle_left"
+animation = &"walk_up"
+frame = 2
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_4ofif")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

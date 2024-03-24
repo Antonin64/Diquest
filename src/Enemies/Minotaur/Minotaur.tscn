@@ -1469,13 +1469,12 @@ texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_40dmc")
 animation = &"idle_left"
-frame = 1
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(5, 5)
+scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_lpibx")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

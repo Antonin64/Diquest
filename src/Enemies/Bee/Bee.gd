@@ -88,10 +88,9 @@ func take_damage(value):
 
 func handle_attack():
 	$Area2D.rotation = direction.angle()
-	$Area2D.position = direction * Vector2(30, 30)
+	$Area2D.position = direction * Vector2(20, 20)
 	if $Area2D.overlaps_body(player_node):
 		player_node.apply_damage(DAMAGE)
-	$Area2D.position = Vector2(0, 0)
 
 func _on_animation_tree_animation_finished(anim_name):
 	if anim_name.begins_with("attack"):
