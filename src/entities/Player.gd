@@ -30,6 +30,7 @@ func _ready():
 	stats.regen()
 	set_healthbar()
 	update_xp_display()
+	update_gold_display()
 	$Weapons/attack_orientation.visible = false
 	add_item("sword_common")
 	equip_item(inventory[0])
@@ -47,6 +48,7 @@ func earn_xp(amt):
 
 func earn_gold(amt):
 	stats.add_gold(amt)
+	update_gold_display()
 
 func die():
 	if (stats.get_health() <= 0):
@@ -243,4 +245,7 @@ func update_xp_display():
 	$xp_bar.value = stats.xp
 	$xp_bar.max_value = stats.needed_xp
 	$xp_display.text = var_to_str(stats.xp) + "/" + var_to_str(stats.needed_xp)
-	$level_display.text = "Level " + var_to_str(stats.level)
+	$ColorRect/level_display.text = "Level " + var_to_str(stats.level)
+
+func update_gold_display():
+	$ColorRect/gold_display.text = "gold : " + var_to_str(stats.gold)

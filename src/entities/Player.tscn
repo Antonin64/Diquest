@@ -160,12 +160,27 @@ theme_override_styles/background = SubResource("StyleBoxFlat_bxw0i")
 theme_override_styles/fill = SubResource("StyleBoxFlat_t4ptw")
 show_percentage = false
 
-[node name="level_display" type="Label" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 60
+offset_left = -480.0
+offset_top = 204.0
+offset_right = -388.0
+offset_bottom = 270.0
+color = Color(0, 0, 0, 1)
+
+[node name="gold_display" type="Label" parent="ColorRect"]
 z_index = 101
-offset_left = -479.0
-offset_top = 202.0
-offset_right = -389.0
-offset_bottom = 269.0
+offset_top = 28.0
+offset_right = 92.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("7_bq1og")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level_display" type="Label" parent="ColorRect"]
+z_index = 101
+offset_right = 92.0
+offset_bottom = 28.0
 theme_override_fonts/font = ExtResource("7_bq1og")
 horizontal_alignment = 1
 vertical_alignment = 1

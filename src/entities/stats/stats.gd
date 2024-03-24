@@ -208,13 +208,15 @@ func add_energy(amt):
 func level_up():
 	level += 1
 	talent_point += 1
+	needed_xp += 0.5 * needed_xp
+	health += 0.1 * health
+	damage += 0.1 * damage
 
 func add_xp(amt):
 	xp += amt
 	while xp >= needed_xp:
 		xp -= needed_xp
 		level_up()
-		needed_xp += 0.5 * needed_xp
 		
 func add_gold(amt):
 	gold += amt
