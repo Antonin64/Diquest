@@ -19,7 +19,7 @@ var gold = 0
 @onready var liferegen = $LifeRegen
 
 #Private var
-var talent_point = 0
+var talent_point = 3
 
 var modifiers = {}
 

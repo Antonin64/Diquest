@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c1uymnvjq0y5t" path="res://entities/player_visual.tscn" id="5_g5ftm"]
 [ext_resource type="PackedScene" uid="uid://bukxumu22e7ld" path="res://entities/stats/SkillTree.tscn" id="5_mv2so"]
 [ext_resource type="PackedScene" uid="uid://wyj8t01350xu" path="res://world/scenes/weapons/weapons.tscn" id="6_pit7j"]
-[ext_resource type="FontFile" uid="uid://be7o6boyan1la" path="res://UI/Pixeboy-z8XGD.ttf" id="7_bq1og"]
+[ext_resource type="FontFile" uid="uid://cfvr2f3mo5ccc" path="res://UI/Pixeboy-z8XGD.ttf" id="7_bq1og"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rhbav"]
 radius = 18.8816
@@ -170,6 +170,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="gold_display" type="Label" parent="ColorRect"]
 z_index = 101
+layout_mode = 0
 offset_top = 28.0
 offset_right = 92.0
 offset_bottom = 58.0
@@ -179,6 +180,7 @@ vertical_alignment = 1
 
 [node name="level_display" type="Label" parent="ColorRect"]
 z_index = 101
+layout_mode = 0
 offset_right = 92.0
 offset_bottom = 28.0
 theme_override_fonts/font = ExtResource("7_bq1og")

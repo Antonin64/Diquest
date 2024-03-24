@@ -24,12 +24,6 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_oq5li")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1176.0
-offset_bottom = 674.0
-color = Color(0.733333, 0.733333, 0.733333, 1)
-
 [node name="Panel" type="Panel" parent="."]
 texture_filter = 1
 layout_mode = 1

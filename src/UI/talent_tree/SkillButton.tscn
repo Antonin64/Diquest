@@ -43,9 +43,8 @@ vertical_alignment = 1
 
 [node name="Line2D" type="Line2D" parent="."]
 top_level = true
-z_index = -1
 width = 3.0
-default_color = Color(0.227451, 0.227451, 0.227451, 1)
+default_color = Color(0, 0, 0, 1)
 
 [node name="TooltipPanel" type="Panel" parent="."]
 visible = false
