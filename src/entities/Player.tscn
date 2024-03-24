@@ -27,19 +27,23 @@ shape = SubResource("RectangleShape2D_2wj1o")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 
-[node name="SkillTree" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("5_mv2so")]
+[node name="SkillTree" parent="." node_paths=PackedStringArray("Player", "Stats") instance=ExtResource("5_mv2so")]
 visible = false
+z_index = 4
 offset_left = -576.0
 offset_top = -324.0
 offset_right = -576.0
 offset_bottom = -324.0
 Player = NodePath("..")
+Stats = NodePath("../Stats")
 
-[node name="Weapons" parent="." instance=ExtResource("6_pit7j")]
+[node name="Weapons" parent="." node_paths=PackedStringArray("Stats") instance=ExtResource("6_pit7j")]
 position = Vector2(0, 18)
 scale = Vector2(0.3, 0.3)
+Stats = NodePath("../Stats")
 
 [node name="Inventory_UI" type="Node2D" parent="."]
+z_index = 3
 
 [node name="slot1" type="Button" parent="Inventory_UI"]
 offset_left = -386.0

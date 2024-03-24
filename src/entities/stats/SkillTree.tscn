@@ -415,7 +415,7 @@ max_level = 4
 position = Vector2(-141.852, 291.113)
 Stats = {
 "attack_speed": 0.0,
-"critical_chance": 1.0,
+"critical_chance": 3.0,
 "critical_damage": 0.0,
 "damage": 0.0,
 "damage_flat": 0.0,
@@ -1397,3 +1397,11 @@ Stats = {
 "stamina_flat": 0.0,
 "stamina_regen": 0.0
 }
+
+[node name="TalentPtsNum" type="Label" parent="."]
+layout_mode = 0
+offset_left = 830.0
+offset_top = 81.0
+offset_right = 870.0
+offset_bottom = 104.0
+text = "0 talent points"

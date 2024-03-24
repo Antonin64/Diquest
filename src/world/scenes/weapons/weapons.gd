@@ -1,7 +1,10 @@
 extends Node2D
 
 @onready var modifier = $Modifier
+@export var Stats : Node2D
 var sword_damage = 1
+
+var rng = RandomNumberGenerator.new()
 
 func player_attack(vector_dir : Vector2, damage : int):
 	sword_damage = damage
@@ -15,4 +18,7 @@ func hide_sword():
 func _is_sword_hitting():
 	var arr = $attack_orientation/Area2D.get_overlapping_bodies()
 	for i in arr:
-		i.take_damage(sword_damage)
+		if (rng.randf_range(0, 1) < Stats.get_critical_chance() / 100):
+			i.take_damage(sword_damage + Stats.get_damage() * ( 1 +Stats.get_critical_damage() / 100))
+			pass
+		i.take_damage(sword_damage + Stats.get_damage())

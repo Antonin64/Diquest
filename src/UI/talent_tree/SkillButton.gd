@@ -65,11 +65,11 @@ func get_max_level():
 	return max_level
 
 func _on_pressed():
-	#if (Stats.get_talent_point() > 0):
-	#	if (get_level() + 1 > get_max_level()):
-	#		return
+	if (Stats.get_talent_point() > 0):
+		if (get_level() + 1 > get_max_level()):
+			return
 
-	#	Stats.spend_talent_point()
+		Stats.spend_talent_point()
 		set_level(get_level() + 1)
 		panel.show_behind_parent = true
 		line2d.default_color = Color(1, 1, 0)

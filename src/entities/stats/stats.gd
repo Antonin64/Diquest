@@ -10,6 +10,9 @@ var stamina_regen = 0.2
 var attack_speed = 1.0
 var critical_chance = 5.0
 var critical_damage = 50.0
+var xp = 0
+var level = 0
+var gold = 0
 
 @onready var energyregen = $EnergyRegen
 @onready var liferegen = $LifeRegen
@@ -50,7 +53,7 @@ func get_damage():
 	for modifier in modifiers:
 		stats = modifiers[modifier].Stats
 		if stats.has("damage"):
-			num *= stats["damage"]
+			num *= 1 + stats["damage"]
 	return num
 	
 func get_attack_speed():
@@ -59,7 +62,7 @@ func get_attack_speed():
 	for modifier in modifiers:
 		stats = modifiers[modifier].Stats
 		if stats.has("attack_speed"):
-			num *= stats["attack_speed"]
+			num *=  1 + stats["attack_speed"]
 	return num
 
 func get_life_regen():
@@ -79,6 +82,12 @@ func get_stamina_regen():
 		if stats.has("stamina_regen"):
 			num += stats["stamina_regen"]
 	return num
+	
+func get_xp():
+	return xp
+	
+func get_level():
+	return level
 
 func get_stamina():
 	var num = stamina
@@ -126,7 +135,7 @@ func get_movement_speed_modifier():
 	for modifier in modifiers:
 		stats = modifiers[modifier].Stats
 		if stats.has("movement_speed"):
-			num += stats["movement_speed"]
+			num += stats["movement_speed"] / 100
 	return num
 	
 func get_critical_chance():
@@ -143,8 +152,8 @@ func get_critical_damage():
 	var stats
 	for modifier in modifiers:
 		stats = modifiers[modifier].Stats
-		if modifier.Stats.has("critical_damage"):
-			num += modifier.Stats["critical_damage"]
+		if stats.has("critical_damage"):
+			num += stats["critical_damage"]
 	return num
 	
 func get_damage_reduction():
@@ -152,8 +161,8 @@ func get_damage_reduction():
 	var stats
 	for modifier in modifiers:
 		stats = modifiers[modifier].Stats
-		if modifier.Stats.has("damage_reduction"):
-			num += modifier.Stats["damage_reduction"]
+		if stats.has("damage_reduction"):
+			num += stats["damage_reduction"] / 100
 	return num
 
 func get_energy():
@@ -175,7 +184,7 @@ func add_health(amt):
 		return
 	health += amt
 	
-func loose_health(amt):
+func lose_health(amt):
 	if (health - amt < 0):
 		health = 0
 		return
@@ -194,6 +203,19 @@ func add_energy(amt):
 		energy = stamina
 		return
 	energy += amt
+	
+func level_up():
+	level += 1
+	talent_point += 1
+
+func add_xp(amt):
+	xp += amt
+	if (xp > 100):
+		xp -= 100
+		level_up()
+		
+func add_gold(amt):
+	gold += amt
 
 func loose_energy(amt):
 	if energy - amt < 0:
@@ -216,3 +238,4 @@ func _on_life_regen_timeout():
 func _on_energy_regen_timeout():
 	add_health(get_life_regen())
 	liferegen.start()
+	

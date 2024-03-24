@@ -21,6 +21,7 @@ var Modifier_class = load("res://entities/stats/Modifier.gd")
 @onready var inventory_buttons = [$Inventory_UI/slot1, $Inventory_UI/slot2, $Inventory_UI/slot3, $Inventory_UI/slot4, $Inventory_UI/slot5, $Inventory_UI/slot6, $Inventory_UI/slot7, $Inventory_UI/slot8, $Inventory_UI/slot9, $Inventory_UI/slot10]
 
 var dash_direction
+var rng = RandomNumberGenerator.new()
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -40,12 +41,17 @@ func _ready():
 func apply_damage(amount : int):
 	if (dash.is_dashing()):
 		return
-	stats.loose_health(amount)
+	stats.lose_health(amount * (1 - stats.get_damage_reduction()))
+	
+func earn_xp(amt):
+	stats.add_xp(amt)
+
+func earn_gold(amt):
+	stats.add_gold(amt)
 
 func die():
 	if (stats.get_health() <= 0):
-		1
-		#TODO die
+		pass
 
 func _physics_process(delta):
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -63,12 +69,20 @@ func _physics_process(delta):
 		else:
 			show_inventory()
 
+	if Input.is_action_just_pressed("ui_talent_tree"):
+		if $SkillTree.visible == true:
+			$SkillTree.visible = false
+		else:
+			$SkillTree.visible = true
+			$SkillTree.update_talent_point()
+
 #movement direction
 	var cur_speed = DASH_SPEED if dash.is_dashing() else SPEED
 	if (dash.is_dashing()):
-		velocity = dash_direction.normalized() * cur_speed * (delta * 100)
+		print(stats.get_movement_speed_modifier())
+		velocity = dash_direction.normalized() * cur_speed * (delta * 100) * (1 + stats.get_movement_speed_modifier())
 	else:
-		velocity = direction.normalized() * cur_speed * (delta * 100)
+		velocity = direction.normalized() * cur_speed * (delta * 100)  * (1 + stats.get_movement_speed_modifier())
 	move_and_slide()
 
 func anim_player(direction):
