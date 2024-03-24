@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ba0w4xm41a6sp"]
+[gd_scene load_steps=6 format=3 uid="uid://dgx0e3p0bnhkl"]
 
 [ext_resource type="Texture2D" uid="uid://c6gk10s5d0yvh" path="res://world/assets/RPGW_Caves_v2.1/decorative.png" id="1_3wtdi"]
 [ext_resource type="Texture2D" uid="uid://dximy5ik7lixp" path="res://world/assets/RPGW_Caves_v2.1/MainLev2.0.png" id="2_dctjp"]

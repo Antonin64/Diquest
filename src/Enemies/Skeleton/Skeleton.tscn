@@ -1,7 +1,7 @@
 [gd_scene load_steps=85 format=3 uid="uid://b6ab5lp03quhj"]
 
 [ext_resource type="Script" path="res://Enemies/Skeleton/Skeleton.gd" id="1_nqxh3"]
-[ext_resource type="Texture2D" uid="uid://cmxwvq76g41x0" path="res://Enemies/Skeleton/Skeleton enemy.png" id="2_8lxnf"]
+[ext_resource type="Texture2D" uid="uid://dpoc8tic36c4q" path="res://Enemies/Skeleton/Skeleton enemy.png" id="2_8lxnf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ctt6q"]
 radius = 9.0
@@ -795,6 +795,7 @@ texture_filter = 1
 scale = Vector2(-2, 2)
 sprite_frames = SubResource("SpriteFrames_ad5ey")
 animation = &"idle_right"
+frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
