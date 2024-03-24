@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const DAMAGE = 50
 const SPEED = 140
-const ATTACK_RANGE = 100
+const ATTACK_RANGE = 50
 const AGRO_RANGE = 300
 const BASE_HP = 200
 

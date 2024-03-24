@@ -719,7 +719,7 @@ states/Start/position = Vector2(62, 100)
 states/Tourbi_lol/node = SubResource("AnimationNodeBlendSpace2D_1oypc")
 states/Tourbi_lol/position = Vector2(701, 188.221)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_vqp3t")
-states/Walk/position = Vector2(478, 1.0041)
+states/Walk/position = Vector2(480, 28.0041)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_qbsgq"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_uabyj"), "Death", "End", SubResource("AnimationNodeStateMachineTransition_gqjci"), "Quick_attack", "Walk", SubResource("AnimationNodeStateMachineTransition_g2c6v"), "Big_Attack", "Walk", SubResource("AnimationNodeStateMachineTransition_37rdy"), "Tourbi_lol", "Walk", SubResource("AnimationNodeStateMachineTransition_k1gnt"), "Tourbi_lol", "Death", SubResource("AnimationNodeStateMachineTransition_cy8s0"), "Big_Attack", "Death", SubResource("AnimationNodeStateMachineTransition_g4m2r"), "Quick_attack", "Death", SubResource("AnimationNodeStateMachineTransition_8savl"), "Walk", "Death", SubResource("AnimationNodeStateMachineTransition_iuiow"), "Walk", "Quick_attack", SubResource("AnimationNodeStateMachineTransition_eqect"), "Walk", "Big_Attack", SubResource("AnimationNodeStateMachineTransition_q78r5"), "Walk", "Tourbi_lol", SubResource("AnimationNodeStateMachineTransition_cmlf5"), "Quick_attack", "Idle", SubResource("AnimationNodeStateMachineTransition_vca06"), "Big_Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_ea0dg"), "Tourbi_lol", "Idle", SubResource("AnimationNodeStateMachineTransition_2kmvq")]
 graph_offset = Vector2(0, -10.5697)
 
@@ -1469,6 +1469,7 @@ texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_40dmc")
 animation = &"idle_left"
+frame = 4
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(2, 2)

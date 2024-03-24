@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const DAMAGE = 10
+const DAMAGE = 20
 const SPEED = 120
 const ATTACK_RANGE = 100
 const AGRO_RANGE = 300
@@ -23,7 +23,7 @@ func _ready():
 func _physics_process(_delta):
 	if agro:
 		direction = to_local(navigation_agent.get_next_path_position()).normalized()
-	if not attack and agro:
+	if attack == 0 and agro:
 		velocity = direction * SPEED
 	else:
 		velocity = Vector2.ZERO
@@ -36,30 +36,32 @@ func _process(_delta):
 	if global_position.distance_to(player_node.global_position) < AGRO_RANGE:
 		agro = true
 	
-	if not attack and agro:
+	if attack == 0 and agro:
 		set_walking(true)
 		update_blend_position()
 	
 	if player_node != null:
-		if global_position.distance_to(player_node.global_position) < ATTACK_RANGE and not attack:
+		if global_position.distance_to(player_node.global_position) < ATTACK_RANGE and attack == 0:
 			set_attack(rng.randi() % 3 + 1)
 
 func set_attack(value = 0):
 	if value != 0:
 		attack = value
 		animation_tree["parameters/conditions/is_walking"] = false
-	if attack == 1:
+	if value == 1:
 		animation_tree["parameters/conditions/big_attack"] = true
-	if attack == 2:
+	if value == 2:
 		animation_tree["parameters/conditions/quick_attack"] = true
-	if attack == 3:
+	if value == 3:
 		animation_tree["parameters/conditions/tourbi_lol"] = true
-	if attack == 0:
+	if value == 0:
 		animation_tree["parameters/conditions/big_attack"] = false
 		animation_tree["parameters/conditions/quick_attack"] = false
 		animation_tree["parameters/conditions/tourbi_lol"] = false
 
 func set_death(value):
+	player_node.earn_money(500)
+	player_node.earn_xp(500)
 	animation_tree["parameters/conditions/death"] = value
 
 func set_walking(value):
