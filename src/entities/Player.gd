@@ -10,8 +10,6 @@ var Modifier_class = load("res://entities/stats/Modifier.gd")
 
 #public var
 @export var Modifier : Modifiers
-@export var max_hp : int  = 100
-@export var hp : int  = 100
 @onready var dash = $Dash
 @onready var stats = $Stats
 @onready var inventory = []
@@ -30,6 +28,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	stats.regen()
+	set_healthbar()
+	update_xp_display()
 	$Weapons/attack_orientation.visible = false
 	add_item("sword_common")
 	equip_item(inventory[0])
@@ -39,10 +39,11 @@ func apply_damage(amount : int):
 	if (dash.is_dashing()):
 		return
 	stats.lose_health(amount * (1 - stats.get_damage_reduction()))
+	set_healthbar()
 	
 func earn_xp(amt):
-	print("xp earnedzqz")
 	stats.add_xp(amt)
+	update_xp_display()
 
 func earn_gold(amt):
 	stats.add_gold(amt)
@@ -130,27 +131,30 @@ func anim_player(direction):
 		$PlayerVisual/plate_armor_hands_tree.set("parameters/Walk/blend_position", direction)
 
 func add_item(rarity):
-	var new_object = Modifier_class.new()
-	new_object.Stats["rarity"] = rarity
-	if (rarity == "sword_common"):
-		new_object.Stats["texture"] = "res://world/assets/weapons/swords/sword_common.png"
-		new_object.Stats["damage"] = 1
-	if (rarity == "sword_uncommon"):
-		new_object.Stats["texture"] = "res://world/assets/weapons/swords/sword_uncommon.png"
-		new_object.Stats["damage"] = 3
-	if (rarity == "sword_rare"):
-		new_object.Stats["texture"] = "res://world/assets/weapons/swords/sword_rare.png"
-		new_object.Stats["damage"] = 6
-	if (rarity == "sword_epic"):
-		new_object.Stats["texture"] = "res://world/assets/weapons/swords/sword_epic.png"
-		new_object.Stats["damage"] = 12
-	if (rarity == "sword_legendary"):
-		new_object.Stats["texture"] = "res://world/assets/weapons/swords/sword_legendary.png"
-		new_object.Stats["damage"] = 20
-	if (rarity == "sword_mythical"):
-		new_object.Stats["texture"] = "res://world/assets/weapons/swords/sword_mythical.png"
-		new_object.Stats["damage"] = 30
-	inventory.append(new_object)
+	if len(inventory) < inventory_size:
+		var new_object = Modifier_class.new()
+		new_object.Stats["rarity"] = rarity
+		if (rarity == "sword_common"):
+			new_object.Stats["texture"] = "res://world/assets/weapons/swords/sword_common.png"
+			new_object.Stats["damage"] = 1
+		if (rarity == "sword_uncommon"):
+			new_object.Stats["texture"] = "res://world/assets/weapons/swords/sword_uncommon.png"
+			new_object.Stats["damage"] = 3
+		if (rarity == "sword_rare"):
+			new_object.Stats["texture"] = "res://world/assets/weapons/swords/sword_rare.png"
+			new_object.Stats["damage"] = 6
+		if (rarity == "sword_epic"):
+			new_object.Stats["texture"] = "res://world/assets/weapons/swords/sword_epic.png"
+			new_object.Stats["damage"] = 12
+		if (rarity == "sword_legendary"):
+			new_object.Stats["texture"] = "res://world/assets/weapons/swords/sword_legendary.png"
+			new_object.Stats["damage"] = 20
+		if (rarity == "sword_mythical"):
+			new_object.Stats["texture"] = "res://world/assets/weapons/swords/sword_mythical.png"
+			new_object.Stats["damage"] = 30
+		inventory.append(new_object)
+	else:
+		print("inventory is full")
 
 func equip_item(item):
 	if item.Stats["rarity"].contains("sword"):
@@ -177,13 +181,11 @@ func _on_slot_1_pressed():
 		equip_item(inventory[cp])
 	show_inventory()
 
-
 func _on_slot_2_pressed():
 	var cp = 1
 	if (len(inventory) > cp + 1):
 		equip_item(inventory[cp])
 	show_inventory()
-
 
 func _on_slot_3_pressed():
 	var cp = 2
@@ -191,13 +193,11 @@ func _on_slot_3_pressed():
 		equip_item(inventory[cp])
 	show_inventory()
 
-
 func _on_slot_4_pressed():
 	var cp = 3
 	if (len(inventory) > cp + 1):
 		equip_item(inventory[cp])
 	show_inventory()
-
 
 func _on_slot_5_pressed():
 	var cp = 4
@@ -205,13 +205,11 @@ func _on_slot_5_pressed():
 		equip_item(inventory[cp])
 	show_inventory()
 
-
 func _on_slot_6_pressed():
 	var cp = 5
 	if (len(inventory) > cp + 1):
 		equip_item(inventory[cp])
 	show_inventory()
-
 
 func _on_slot_7_pressed():
 	var cp = 6
@@ -219,13 +217,11 @@ func _on_slot_7_pressed():
 		equip_item(inventory[cp])
 	show_inventory()
 
-
 func _on_slot_8_pressed():
 	var cp = 7
 	if (len(inventory) > cp + 1):
 		equip_item(inventory[cp])
 	show_inventory()
-
 
 func _on_slot_9_pressed():
 	var cp = 8
@@ -233,9 +229,18 @@ func _on_slot_9_pressed():
 		equip_item(inventory[cp])
 	show_inventory()
 
-
 func _on_slot_10_pressed():
 	var cp = 9
 	if (len(inventory) > cp + 1):
 		equip_item(inventory[cp])
 	
+func set_healthbar():
+	$healthbar.value = stats.health
+	$healthbar.max_value = stats.max_health
+	$health_display.text = var_to_str(stats.health) + "/" + var_to_str(stats.max_health)
+
+func update_xp_display():
+	$xp_bar.value = stats.xp
+	$xp_bar.max_value = stats.needed_xp
+	$xp_display.text = var_to_str(stats.xp) + "/" + var_to_str(stats.needed_xp)
+	$level_display.text = "Level " + var_to_str(stats.level)

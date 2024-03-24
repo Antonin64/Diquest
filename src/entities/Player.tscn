@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4ay6ose6si8h"]
+[gd_scene load_steps=13 format=3 uid="uid://b4ay6ose6si8h"]
 
 [ext_resource type="Script" path="res://entities/Player.gd" id="1_ms2wx"]
 [ext_resource type="PackedScene" uid="uid://dq3lmtdw8a5dh" path="res://entities/dash.tscn" id="2_eq173"]
@@ -6,23 +6,38 @@
 [ext_resource type="PackedScene" uid="uid://c1uymnvjq0y5t" path="res://entities/player_visual.tscn" id="5_g5ftm"]
 [ext_resource type="PackedScene" uid="uid://bukxumu22e7ld" path="res://entities/stats/SkillTree.tscn" id="5_mv2so"]
 [ext_resource type="PackedScene" uid="uid://wyj8t01350xu" path="res://world/scenes/weapons/weapons.tscn" id="6_pit7j"]
+[ext_resource type="FontFile" uid="uid://be7o6boyan1la" path="res://UI/Pixeboy-z8XGD.ttf" id="7_bq1og"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wj1o"]
-size = Vector2(20, 30.8245)
+[sub_resource type="CircleShape2D" id="CircleShape2D_rhbav"]
+radius = 18.8816
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxw0i"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4ptw"]
+bg_color = Color(0.188235, 0.721569, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ae4f2"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fohmj"]
+bg_color = Color(1, 0.168627, 0.772549, 1)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 5
 script = ExtResource("1_ms2wx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6.5)
 scale = Vector2(0.794546, 1.52476)
-shape = SubResource("RectangleShape2D_2wj1o")
+shape = SubResource("CircleShape2D_rhbav")
 
 [node name="Dash" parent="." instance=ExtResource("2_eq173")]
 
 [node name="Stats" parent="." instance=ExtResource("4_y4yx5")]
 
 [node name="PlayerVisual" parent="." instance=ExtResource("5_g5ftm")]
+z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
@@ -124,6 +139,60 @@ offset_right = 464.0
 offset_bottom = 294.0
 scale = Vector2(0.4, 0.4)
 action_mode = 0
+
+[node name="health_display" type="Label" parent="."]
+z_index = 101
+offset_left = -210.0
+offset_top = 229.0
+offset_right = 210.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("7_bq1og")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="healthbar" type="ProgressBar" parent="."]
+z_index = 100
+offset_left = -210.0
+offset_top = 229.0
+offset_right = 210.0
+offset_bottom = 256.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bxw0i")
+theme_override_styles/fill = SubResource("StyleBoxFlat_t4ptw")
+show_percentage = false
+
+[node name="level_display" type="Label" parent="."]
+z_index = 101
+offset_left = -479.0
+offset_top = 202.0
+offset_right = -389.0
+offset_bottom = 269.0
+theme_override_fonts/font = ExtResource("7_bq1og")
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="xp_bar" type="ProgressBar" parent="."]
+z_index = 100
+offset_left = -210.0
+offset_top = 258.0
+offset_right = 210.0
+offset_bottom = 265.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ae4f2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fohmj")
+show_percentage = false
+
+[node name="xp_display" type="Label" parent="."]
+z_index = 101
+offset_left = -210.0
+offset_top = 258.0
+offset_right = 1190.0
+offset_bottom = 281.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("7_bq1og")
+theme_override_font_sizes/font_size = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
 
 [connection signal="pressed" from="Inventory_UI/slot1" to="." method="_on_slot_1_pressed"]
 [connection signal="pressed" from="Inventory_UI/slot2" to="." method="_on_slot_2_pressed"]

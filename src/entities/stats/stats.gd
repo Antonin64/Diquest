@@ -11,7 +11,8 @@ var attack_speed = 1.0
 var critical_chance = 5.0
 var critical_damage = 50.0
 var xp = 0
-var level = 0
+var level = 1
+var needed_xp = 10
 var gold = 0
 
 @onready var energyregen = $EnergyRegen
@@ -210,9 +211,10 @@ func level_up():
 
 func add_xp(amt):
 	xp += amt
-	if (xp >= 100):
-		xp -= 100
+	while xp >= needed_xp:
+		xp -= needed_xp
 		level_up()
+		needed_xp += 0.5 * needed_xp
 		
 func add_gold(amt):
 	gold += amt
