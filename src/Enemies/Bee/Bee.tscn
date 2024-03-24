@@ -658,14 +658,14 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_mwfw0"]
 states/Attack/node = SubResource("AnimationNodeBlendSpace2D_b4ma2")
-states/Attack/position = Vector2(341, 24)
+states/Attack/position = Vector2(437, 166)
 states/Death/node = SubResource("AnimationNodeBlendSpace2D_k0xe0")
-states/Death/position = Vector2(477, 192)
+states/Death/position = Vector2(621, 100)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_fasxh")
 states/Idle/position = Vector2(241, 100)
 states/Start/position = Vector2(66, 100)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_vkodb")
-states/Walk/position = Vector2(639, 100)
+states/Walk/position = Vector2(437, 31)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_eoaek"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_oe1i2"), "Death", "End", SubResource("AnimationNodeStateMachineTransition_v8e0v"), "Attack", "Death", SubResource("AnimationNodeStateMachineTransition_m4i2u"), "Walk", "Attack", SubResource("AnimationNodeStateMachineTransition_qe00r"), "Walk", "Death", SubResource("AnimationNodeStateMachineTransition_a5qo5"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_ch8hp"), "Attack", "Walk", SubResource("AnimationNodeStateMachineTransition_4e1np")]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qwstn"]
@@ -1234,8 +1234,8 @@ texture_filter = 1
 position = Vector2(0, 10)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_2lski")
-animation = &"walk_up"
-frame = 1
+animation = &"idle_left"
+frame = 3
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(2, 2)

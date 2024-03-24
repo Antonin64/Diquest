@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://ccgrkk7ool715"]
+[gd_scene load_steps=72 format=3 uid="uid://ccgrkk7ool715"]
 
 [ext_resource type="Script" path="res://Enemies/Loup/Loup.gd" id="1_fk017"]
 [ext_resource type="Texture2D" uid="uid://41w7ndg2xqjd" path="res://Enemies/Loup/Canine_White_Attack.png" id="1_g1nke"]
@@ -677,25 +677,29 @@ advance_mode = 2
 switch_mode = 2
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_k3ewr"]
-advance_mode = 2
-advance_condition = &"death"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xhld2"]
-advance_mode = 2
-advance_condition = &"idle"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tce0u"]
 advance_mode = 2
 advance_condition = &"is_walking"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tjtpf"]
-advance_mode = 2
-advance_condition = &"attack"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_78f0n"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rfq3e"]
 switch_mode = 2
 advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m2ouj"]
+advance_mode = 2
+advance_condition = &"is_walking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tn7nq"]
+advance_mode = 2
+advance_condition = &"death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tpvha"]
+advance_mode = 2
+advance_condition = &"death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qhf8g"]
+advance_mode = 2
+advance_condition = &"attack"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_u8x6d"]
 states/Attack/node = SubResource("AnimationNodeBlendSpace2D_i7osh")
@@ -703,10 +707,11 @@ states/Attack/position = Vector2(442, 177)
 states/Death/node = SubResource("AnimationNodeBlendSpace2D_lpk26")
 states/Death/position = Vector2(608, 100)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_6tiqm")
-states/Idle/position = Vector2(442, 100)
+states/Idle/position = Vector2(293, 100)
+states/Start/position = Vector2(92, 100)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_tatw2")
 states/Walk/position = Vector2(442, 28)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_4h4xe"), "Death", "End", SubResource("AnimationNodeStateMachineTransition_36wam"), "Idle", "Death", SubResource("AnimationNodeStateMachineTransition_k3ewr"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_xhld2"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_tce0u"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_tjtpf"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_78f0n")]
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_4h4xe"), "Death", "End", SubResource("AnimationNodeStateMachineTransition_36wam"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_tce0u"), "Attack", "Walk", SubResource("AnimationNodeStateMachineTransition_rfq3e"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_m2ouj"), "Attack", "Death", SubResource("AnimationNodeStateMachineTransition_tn7nq"), "Walk", "Death", SubResource("AnimationNodeStateMachineTransition_tpvha"), "Walk", "Attack", SubResource("AnimationNodeStateMachineTransition_qhf8g")]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iikw3"]
 size = Vector2(6.5, 6.5)
@@ -727,7 +732,7 @@ texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_uudaq")
 animation = &"Idle_left"
-frame = 3
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -742,7 +747,6 @@ tree_root = SubResource("AnimationNodeStateMachine_u8x6d")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/attack = false
 parameters/conditions/death = false
-parameters/conditions/idle = false
 parameters/conditions/is_walking = false
 parameters/Attack/blend_position = Vector2(0.00218344, 0.0220264)
 parameters/Death/blend_position = Vector2(0, 0)
@@ -753,7 +757,14 @@ parameters/Walk/blend_position = Vector2(-0.139738, -0.101322)
 scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_iikw3")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
