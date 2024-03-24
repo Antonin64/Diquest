@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://clchirfiw7wig"]
+
+[ext_resource type="Script" path="res://entities/npc/dark_trader/NpcTrader.gd" id="1_n8ysv"]
+[ext_resource type="Texture2D" uid="uid://bfkf61dbluoln" path="res://world/assets/npc/Male1.png" id="1_xbobr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4yue"]
+atlas = ExtResource("1_xbobr")
+region = Rect2(0, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3gi3"]
+atlas = ExtResource("1_xbobr")
+region = Rect2(32, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7w4x5"]
+atlas = ExtResource("1_xbobr")
+region = Rect2(64, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02dt2"]
+atlas = ExtResource("1_xbobr")
+region = Rect2(96, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtkqr"]
+atlas = ExtResource("1_xbobr")
+region = Rect2(160, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jeq2v"]
+atlas = ExtResource("1_xbobr")
+region = Rect2(224, 48, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l8dys"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4yue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3gi3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7w4x5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02dt2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtkqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jeq2v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="NpcTrader" type="Node2D"]
+script = ExtResource("1_n8ysv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_l8dys")
+frame_progress = 0.132342
+
+[node name="Button" type="Button" parent="."]
+offset_left = -9.0
+offset_top = -18.0
+offset_right = 8.0
+offset_bottom = 17.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
