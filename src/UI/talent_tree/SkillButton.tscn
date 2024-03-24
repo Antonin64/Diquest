@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bsgtfl32oicvd" path="res://icon.svg" id="1_dt7qc"]
 [ext_resource type="Script" path="res://UI/talent_tree/SkillButton.gd" id="2_5xu5y"]
-[ext_resource type="FontFile" uid="uid://cghrehhqxyf0h" path="res://UI/VCR_OSD_MONO_1.001.ttf" id="2_btobi"]
+[ext_resource type="FontFile" uid="uid://deo00cx344fwb" path="res://UI/VCR_OSD_MONO_1.001.ttf" id="2_btobi"]
 
 [node name="SkillButton" type="TextureButton"]
 texture_filter = 1

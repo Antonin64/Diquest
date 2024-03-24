@@ -48,6 +48,15 @@ func _ready():
 			Modifier = child
 			generate_tooltip()
 			return
+			
+func fetch_stats():
+	if get_parent() is SkillTree:
+		Stats = get_parent().get_parent().stats
+	if get_parent() is SkillNode:
+		var parent = get_parent()
+		while (parent is SkillNode):
+			parent = parent.get_parent()
+		Stats = parent.Stats
 
 func set_level(amt : int):
 	if (amt > max_level):
@@ -65,6 +74,8 @@ func get_max_level():
 	return max_level
 
 func _on_pressed():
+	if Stats == null:
+		fetch_stats()
 	if (Stats.get_talent_point() > 0):
 		if (get_level() + 1 > get_max_level()):
 			return
