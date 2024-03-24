@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=11 format=3 uid="uid://ba0w4xm41a6sp"]
+=======
+[gd_scene load_steps=6 format=3 uid="uid://dgx0e3p0bnhkl"]
+>>>>>>> 4c52d1c124b12c12588de93b3fe5e2dac8de6a12
 
 [ext_resource type="Texture2D" uid="uid://c6gk10s5d0yvh" path="res://world/assets/RPGW_Caves_v2.1/decorative.png" id="1_3wtdi"]
 [ext_resource type="Script" path="res://world/scenes/cave.gd" id="1_gaq38"]
