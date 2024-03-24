@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://6taoxbk4604l"]
+[gd_scene load_steps=6 format=3 uid="uid://6taoxbk4604l"]
 
-[ext_resource type="Texture2D" uid="uid://dmcwckfey34v3" path="res://shop/forge/forge img/forge.png" id="1_vv4k7"]
-[ext_resource type="Texture2D" uid="uid://byy2i87mq7nab" path="res://shop/forge/forge img/sword_mythical.png" id="2_d5ex5"]
+[ext_resource type="Texture2D" uid="uid://ddeaskajrgvpr" path="res://shop/forge/forge img/forge.png" id="1_vv4k7"]
+[ext_resource type="Texture2D" uid="uid://crgn2rn255k6q" path="res://shop/forge/forge img/sword_mythical.png" id="2_d5ex5"]
+[ext_resource type="Script" path="res://shop/forge/forge menu/TextureRect.gd" id="2_es8qf"]
 [ext_resource type="Script" path="res://shop/forge/forge menu/exit.gd" id="3_lytue"]
-[ext_resource type="Texture2D" uid="uid://cybrfqhayv8ad" path="res://shop/forge/forge img/item_frame.png" id="3_po4y0"]
+[ext_resource type="Texture2D" uid="uid://c57poaxnwp772" path="res://shop/forge/forge img/item_frame.png" id="3_po4y0"]
 
 [node name="ForgeMenue" type="Control"]
 layout_mode = 3
@@ -13,15 +14,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(1920, 1080)
-layout_mode = 0
-offset_left = -4.0
-offset_right = 1144.0
-offset_bottom = 647.0
-texture = ExtResource("1_vv4k7")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="upgrade" type="Button" parent="TextureRect"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = -1
+anchor_right = 0.998
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_right = -0.160034
+texture = ExtResource("1_vv4k7")
+script = ExtResource("2_es8qf")
+
+[node name="upgrade" type="Button" parent="CanvasLayer/TextureRect"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.007
@@ -32,7 +37,7 @@ offset_right = 1104.56
 offset_bottom = 927.64
 text = "UPGRADE"
 
-[node name="exit" type="Button" parent="TextureRect"]
+[node name="exit" type="Button" parent="CanvasLayer/TextureRect"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.021
@@ -44,7 +49,7 @@ offset_bottom = 976.6
 text = "EXIT"
 script = ExtResource("3_lytue")
 
-[node name="item frame" type="TextureRect" parent="TextureRect"]
+[node name="item frame" type="TextureRect" parent="CanvasLayer/TextureRect"]
 layout_mode = 0
 offset_left = 672.0
 offset_top = 108.0
@@ -52,7 +57,7 @@ offset_right = 1311.0
 offset_bottom = 704.0
 texture = ExtResource("3_po4y0")
 
-[node name="item" type="TextureRect" parent="TextureRect/item frame"]
+[node name="item" type="TextureRect" parent="CanvasLayer/TextureRect/item frame"]
 layout_mode = 0
 offset_left = 115.0
 offset_top = 112.0
@@ -60,4 +65,4 @@ offset_right = 517.0
 offset_bottom = 483.0
 texture = ExtResource("2_d5ex5")
 
-[connection signal="pressed" from="TextureRect/exit" to="TextureRect/exit" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/exit" to="CanvasLayer/TextureRect/exit" method="_on_pressed"]

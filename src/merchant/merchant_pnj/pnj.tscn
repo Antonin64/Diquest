@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://p0khjglj72fl"]
 
-[ext_resource type="Texture2D" uid="uid://blrrglg23edn3" path="res://merchant/merchant_pnj/merchant_sprites/Gipsy spritesheet.png" id="1_8m5wv"]
+[ext_resource type="Texture2D" uid="uid://dnk0wy1eys6vv" path="res://merchant/merchant_pnj/merchant_sprites/Gipsy spritesheet.png" id="1_8m5wv"]
 [ext_resource type="Script" path="res://merchant/merchant_pnj/pnj_interact.gd" id="2_3ipts"]
 [ext_resource type="Script" path="res://merchant/merchant_pnj/AnimatedSprite2D.gd" id="2_duq4l"]
 
