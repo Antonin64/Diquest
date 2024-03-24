@@ -210,7 +210,7 @@ func level_up():
 
 func add_xp(amt):
 	xp += amt
-	if (xp > 100):
+	if (xp >= 100):
 		xp -= 100
 		level_up()
 		

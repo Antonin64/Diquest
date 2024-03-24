@@ -23,6 +23,12 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_oq5li")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1176.0
+offset_bottom = 674.0
+color = Color(0.733333, 0.733333, 0.733333, 1)
+
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -54,7 +60,7 @@ Stats = {
 "life_steal": 0.0,
 "max_health": 0.0,
 "max_health_flat": 0.0,
-"movement_speed": 2.0,
+"movement_speed": 3.0,
 "poison_dmg": 0.0,
 "poison_tick_speed": 0.0,
 "projectile_number": 0.0,
@@ -731,7 +737,7 @@ Stats = {
 "life_steal": 0.0,
 "max_health": 0.0,
 "max_health_flat": 0.0,
-"movement_speed": 2.0,
+"movement_speed": 3.0,
 "poison_dmg": 0.0,
 "poison_tick_speed": 0.0,
 "projectile_number": 0.0,
@@ -949,7 +955,7 @@ Stats = {
 "life_steal": 0.0,
 "max_health": 0.0,
 "max_health_flat": 0.0,
-"movement_speed": 1.0,
+"movement_speed": 4.0,
 "poison_dmg": 0.0,
 "poison_tick_speed": 0.0,
 "projectile_number": 0.0,
@@ -1011,11 +1017,11 @@ Stats = {
 "life_steal": 0.0,
 "max_health": 0.0,
 "max_health_flat": 0.0,
-"movement_speed": 1.0,
+"movement_speed": 4.0,
 "poison_dmg": 0.0,
 "poison_tick_speed": 0.0,
 "projectile_number": 0.0,
-"stamina": 0.0,
+"stamina": 0.05,
 "stamina_flat": 0.0,
 "stamina_regen": 0.0
 }

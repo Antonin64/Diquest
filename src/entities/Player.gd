@@ -44,6 +44,7 @@ func apply_damage(amount : int):
 	stats.lose_health(amount * (1 - stats.get_damage_reduction()))
 	
 func earn_xp(amt):
+	print("xp earnedzqz")
 	stats.add_xp(amt)
 
 func earn_gold(amt):
