@@ -1,4 +1,6 @@
 extends Button
 
+var node_interface
+
 func _on_pressed():
-	get_tree().change_scene_to_file("res://shop/shop menu/shop_interface.tscn")
+	node_interface.get_child(0).show()
