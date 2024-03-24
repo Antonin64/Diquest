@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const DAMAGE = 50
+const DAMAGE = 40
 const SPEED = 140
 const ATTACK_RANGE = 50
 const AGRO_RANGE = 300
@@ -50,6 +50,8 @@ func set_attack(value = false):
 	animation_tree["parameters/conditions/attack"] = value
 
 func set_death(value):
+	player_node.earn_gold(300)
+	player_node.earn_xp(300)
 	animation_tree["parameters/conditions/death"] = value
 
 func set_walking(value):

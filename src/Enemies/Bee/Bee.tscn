@@ -1235,7 +1235,7 @@ position = Vector2(0, 10)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_2lski")
 animation = &"idle_left"
-frame = 2
+frame = 3
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(2, 2)
