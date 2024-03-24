@@ -69,7 +69,7 @@ func set_death(value):
 	if animation_tree["parameters/conditions/death"] == false:
 		player_node.earn_gold(50)
 		player_node.earn_xp(50)
-		if (rng.randi() % 4 == 3):
+		if (rng.randi() % 50 == 3):
 			player_node.add_item(choose_rarity(rng.randi() % 100 + 1))
 		animation_tree["parameters/conditions/death"] = value
 
