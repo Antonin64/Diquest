@@ -1,11 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://ctxgtr0xj3uwh"]
+[gd_scene load_steps=18 format=3 uid="uid://cdc7pb160kug2"]
 
-[ext_resource type="Texture2D" uid="uid://c2cx74votrg5h" path="res://world/assets/RPGW_SnowyLands_v2.0/MainLev_autotiling.png" id="1_fqw4a"]
+[ext_resource type="Texture2D" uid="uid://xojhb7bhkike" path="res://world/assets/RPGW_SnowyLands_v2.0/MainLev_autotiling.png" id="1_fqw4a"]
 [ext_resource type="Script" path="res://world/scenes/zone_snow.gd" id="1_p67ed"]
-[ext_resource type="Texture2D" uid="uid://c7h46siyhyo4e" path="res://world/assets/RPGW_SnowyLands_v2.0/MainLev2.0.png" id="2_bnm6k"]
-[ext_resource type="Texture2D" uid="uid://hxsmkulgyxte" path="res://world/assets/RPGW_SnowyLands_v2.0/decorative.png" id="3_ondd1"]
-[ext_resource type="Texture2D" uid="uid://1fx8vf3t4hw3" path="res://world/assets/RPGW_SnowyLandsv_1.0/MainLevBuild.png" id="4_pnd16"]
-[ext_resource type="Texture2D" uid="uid://r116ageqmepo" path="res://world/assets/RPGW_SnowyLandsv_1.0/decorative.png" id="5_h8sfm"]
+[ext_resource type="Texture2D" uid="uid://bmmgp21b8kajc" path="res://world/assets/RPGW_SnowyLands_v2.0/MainLev2.0.png" id="2_bnm6k"]
+[ext_resource type="Texture2D" uid="uid://bdf1kndxf02m7" path="res://world/assets/RPGW_SnowyLands_v2.0/decorative.png" id="3_ondd1"]
+[ext_resource type="Texture2D" uid="uid://c6jphhgl251oo" path="res://world/assets/RPGW_SnowyLandsv_1.0/MainLevBuild.png" id="4_pnd16"]
+[ext_resource type="Texture2D" uid="uid://bbwcbut7dt8f1" path="res://world/assets/RPGW_SnowyLandsv_1.0/decorative.png" id="5_h8sfm"]
 [ext_resource type="PackedScene" uid="uid://b4ay6ose6si8h" path="res://entities/Player.tscn" id="7_3rb5i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nn7kp"]

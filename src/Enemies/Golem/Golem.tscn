@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cidp5021indrr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r1uh3"]
+radius = 45.0
+height = 122.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhaf7"]
+size = Vector2(6.5, 6.5)
+
+[node name="Golem" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_r1uh3")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_nhaf7")

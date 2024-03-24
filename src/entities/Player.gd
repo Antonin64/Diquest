@@ -32,9 +32,6 @@ func _ready():
 	stats.regen()
 	$Weapons/attack_orientation.visible = false
 	add_item("sword_common")
-	add_item("sword_common")
-	add_item("sword_mythical")
-	add_item("sword_legendary")
 	equip_item(inventory[0])
 	hide_inventory()
 

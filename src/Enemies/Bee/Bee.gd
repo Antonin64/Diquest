@@ -11,6 +11,7 @@ var attack : bool = false
 var player_node
 var agro
 var hp
+var rng = RandomNumberGenerator.new()
 
 @onready var navigation_agent = $NavigationAgent2D
 @onready var animation_tree = $AnimationTree
@@ -51,10 +52,25 @@ func set_attack(value = false):
 		animation_tree["parameters/conditions/is_walking"] = false
 	animation_tree["parameters/conditions/attack"] = value
 
+func choose_rarity(value):
+	if value <= 50:
+		return "sword_common"
+	if value <= 70:
+		return "sword_uncommon"
+	if value <= 85:
+		return "sword_rare"
+	if value <= 95:
+		return "sword_epic"
+	if value <= 99:
+		return "sword_legendary"
+	return "sword_mythical"
+
 func set_death(value):
 	if animation_tree["parameters/conditions/death"] == false:
 		player_node.earn_gold(50)
 		player_node.earn_xp(50)
+		if (rng.randi() % 4 == 3):
+			player_node.add_item(choose_rarity(rng.randi() % 100 + 1))
 		animation_tree["parameters/conditions/death"] = value
 
 func set_walking(value):

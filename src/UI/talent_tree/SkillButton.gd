@@ -35,7 +35,7 @@ func generate_tooltip():
 
 func _ready():
 	if get_parent() is SkillTree:
-		Stats = get_parent().Stats
+		Stats = get_parent().get_parent().stats
 	if get_parent() is SkillNode:
 		var parent = get_parent()
 		while (parent is SkillNode):

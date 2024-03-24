@@ -12,6 +12,6 @@ func _process(_delta):
 		$Timer.start()
 
 func _on_timer_timeout():
-	mob = load("res://Enemies/Bee/Bee.tscn").instantiate()
+	mob = load("res://Enemies/Minotaur/Minotaur.tscn").instantiate()
 	mob.player_node = $"../../CharacterBody2D"
 	add_child(mob)

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://entities/stats/stats.gd" id="1_0668p"]
 [ext_resource type="PackedScene" uid="uid://csusmptumx1mq" path="res://entities/stats/Modifier.tscn" id="2_6p6ak"]
 
-[node name="Stats" type="Node2D"]
+[node name="Stats" type="Node2D" groups=["Persist"]]
 script = ExtResource("1_0668p")
 
 [node name="EnergyRegen" type="Timer" parent="."]

@@ -59,10 +59,24 @@ func set_attack(value = 0):
 		animation_tree["parameters/conditions/quick_attack"] = false
 		animation_tree["parameters/conditions/tourbi_lol"] = false
 
+func choose_rarity(value):
+	if value <= 20:
+		return "sword_common"
+	if value <= 60:
+		return "sword_uncommon"
+	if value <= 75:
+		return "sword_rare"
+	if value <= 90:
+		return "sword_epic"
+	if value <= 97:
+		return "sword_legendary"
+	return "sword_mythical"
+
 func set_death(value):
 	if animation_tree["parameters/conditions/death"] == false:
 		player_node.earn_gold(500)
 		player_node.earn_xp(500)
+		player_node.add_item(choose_rarity(rng.randi() % 100 + 1))
 		animation_tree["parameters/conditions/death"] = value
 
 func set_walking(value):

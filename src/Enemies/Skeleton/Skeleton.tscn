@@ -848,7 +848,7 @@ texture_filter = 1
 scale = Vector2(-2, 2)
 sprite_frames = SubResource("SpriteFrames_ad5ey")
 animation = &"walk_right"
-frame = 11
+frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

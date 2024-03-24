@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-const DAMAGE = 50
+const DAMAGE = 80
 const SPEED = 140
 const ATTACK_RANGE = 75
 const AGRO_RANGE = 300
-const BASE_HP = 200
+const BASE_HP = 350
 
 var direction : Vector2 = Vector2.ZERO
 var attack : bool = false
@@ -50,7 +50,10 @@ func set_attack(value = false):
 	animation_tree["parameters/conditions/attack"] = value
 
 func set_death(value):
-	animation_tree["parameters/conditions/death"] = value
+	if animation_tree["parameters/conditions/death"] == false:
+		player_node.earn_gold(1000)
+		player_node.earn_xp(1000)
+		animation_tree["parameters/conditions/death"] = value
 
 func set_walking(value):
 	animation_tree["parameters/conditions/is_walking"] = value
