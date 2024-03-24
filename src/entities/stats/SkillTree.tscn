@@ -20,9 +20,9 @@ grow_vertical = 2
 [node name="InitialNode" parent="." instance=ExtResource("1_do54u")]
 layout_direction = 1
 layout_mode = 0
-offset_left = 571.0
+offset_left = 563.0
 offset_top = 284.0
-offset_right = 611.0
+offset_right = 603.0
 offset_bottom = 324.0
 disabled = false
 
@@ -465,6 +465,214 @@ Stats = {
 "stamina_regen": 0.0
 }
 
+[node name="MovementSpeed8" parent="InitialNode/CritDmg/CritDmg2/CritDmg3" instance=ExtResource("1_do54u")]
+layout_mode = 0
+offset_left = -84.0
+offset_top = -14.0
+offset_right = -44.0
+offset_bottom = 26.0
+
+[node name="Modifier" parent="InitialNode/CritDmg/CritDmg2/CritDmg3/MovementSpeed8" instance=ExtResource("3_tnt8k")]
+position = Vector2(53.4326, -136.291)
+Stats = {
+"attack_speed": 0.0,
+"critical_chance": 0.0,
+"critical_damage": 0.0,
+"damage": 0.0,
+"damage_flat": 0.0,
+"damage_reduction": 0.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.0,
+"life_steal": 0.0,
+"max_health": 0.0,
+"max_health_flat": 0.0,
+"movement_speed": 3.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
+
+[node name="maxhealth3" parent="InitialNode/CritDmg/CritDmg2/CritDmg3/MovementSpeed8" instance=ExtResource("1_do54u")]
+layout_mode = 0
+offset_left = -81.0
+offset_top = -30.0
+offset_right = -41.0
+offset_bottom = 10.0
+
+[node name="Modifier" parent="InitialNode/CritDmg/CritDmg2/CritDmg3/MovementSpeed8/maxhealth3" instance=ExtResource("3_tnt8k")]
+position = Vector2(134.433, -106.291)
+Stats = {
+"attack_speed": 0.0,
+"critical_chance": 0.0,
+"critical_damage": 0.0,
+"damage": 0.0,
+"damage_flat": 0.0,
+"damage_reduction": 0.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.0,
+"life_steal": 0.0,
+"max_health": 0.0,
+"max_health_flat": 15.0,
+"movement_speed": 0.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
+
+[node name="MoreProjectile" parent="InitialNode/CritDmg/CritDmg2/CritDmg3/MovementSpeed8/maxhealth3" instance=ExtResource("1_do54u")]
+layout_mode = 0
+offset_left = -64.0
+offset_top = -51.0
+offset_right = -24.0
+offset_bottom = -11.0
+
+[node name="Modifier" parent="InitialNode/CritDmg/CritDmg2/CritDmg3/MovementSpeed8/maxhealth3/MoreProjectile" instance=ExtResource("3_tnt8k")]
+Stats = {
+"attack_speed": 0.0,
+"critical_chance": 0.0,
+"critical_damage": 0.0,
+"damage": 0.0,
+"damage_flat": 0.0,
+"damage_reduction": 0.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.0,
+"life_steal": 0.0,
+"max_health": 0.0,
+"max_health_flat": 0.0,
+"movement_speed": 0.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 1.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
+
+[node name="Stamina6" parent="InitialNode/CritDmg/CritDmg2/CritDmg3/MovementSpeed8/maxhealth3/MoreProjectile" instance=ExtResource("1_do54u")]
+layout_mode = 0
+offset_left = -52.0
+offset_top = -69.0
+offset_right = -12.0
+offset_bottom = -29.0
+max_level = 3
+
+[node name="Modifier" parent="InitialNode/CritDmg/CritDmg2/CritDmg3/MovementSpeed8/maxhealth3/MoreProjectile/Stamina6" instance=ExtResource("3_tnt8k")]
+Stats = {
+"attack_speed": 0.0,
+"critical_chance": 0.0,
+"critical_damage": 0.0,
+"damage": 0.0,
+"damage_flat": 0.0,
+"damage_reduction": 0.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.0,
+"life_steal": 0.0,
+"max_health": 0.0,
+"max_health_flat": 0.0,
+"movement_speed": 0.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 4.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
+
+[node name="DamageRed" parent="InitialNode/CritDmg/CritDmg2/CritDmg3/MovementSpeed8/maxhealth3/MoreProjectile/Stamina6" instance=ExtResource("1_do54u")]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 131.0
+offset_right = 43.0
+offset_bottom = 171.0
+
+[node name="Modifier" parent="InitialNode/CritDmg/CritDmg2/CritDmg3/MovementSpeed8/maxhealth3/MoreProjectile/Stamina6/DamageRed" instance=ExtResource("3_tnt8k")]
+position = Vector2(247.433, -117.291)
+Stats = {
+"attack_speed": 0.0,
+"critical_chance": 0.0,
+"critical_damage": 0.0,
+"damage": 0.0,
+"damage_flat": 0.0,
+"damage_reduction": 1.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.0,
+"life_steal": 0.0,
+"max_health": 0.0,
+"max_health_flat": 0.0,
+"movement_speed": 0.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
+
+[node name="AttackSpeed4" parent="InitialNode/CritDmg/CritDmg2/CritDmg3/MovementSpeed8/maxhealth3/MoreProjectile/Stamina6/DamageRed" instance=ExtResource("1_do54u")]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 71.0
+offset_right = 100.0
+offset_bottom = 111.0
+
+[node name="Modifier" parent="InitialNode/CritDmg/CritDmg2/CritDmg3/MovementSpeed8/maxhealth3/MoreProjectile/Stamina6/DamageRed/AttackSpeed4" instance=ExtResource("3_tnt8k")]
+Stats = {
+"attack_speed": 4.0,
+"critical_chance": 0.0,
+"critical_damage": 0.0,
+"damage": 0.0,
+"damage_flat": 0.0,
+"damage_reduction": 0.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.0,
+"life_steal": 0.0,
+"max_health": 0.0,
+"max_health_flat": 0.0,
+"movement_speed": 0.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
+
+[node name="UltimateSpeed" parent="InitialNode/CritDmg/CritDmg2/CritDmg3/MovementSpeed8/maxhealth3/MoreProjectile/Stamina6/DamageRed/AttackSpeed4" instance=ExtResource("1_do54u")]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 55.0
+offset_right = 116.0
+offset_bottom = 95.0
+max_level = 100
+
+[node name="Modifier2" parent="InitialNode/CritDmg/CritDmg2/CritDmg3/MovementSpeed8/maxhealth3/MoreProjectile/Stamina6/DamageRed/AttackSpeed4/UltimateSpeed" instance=ExtResource("3_tnt8k")]
+Stats = {
+"attack_speed": 0.0,
+"critical_chance": 0.0,
+"critical_damage": 0.0,
+"damage": 0.0,
+"damage_flat": 0.0,
+"damage_reduction": 0.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.0,
+"life_steal": 0.0,
+"max_health": 0.0,
+"max_health_flat": 0.0,
+"movement_speed": 0.1,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
+
 [node name="MovementSpeed" parent="InitialNode" instance=ExtResource("1_do54u")]
 layout_mode = 0
 offset_left = 74.0
@@ -502,6 +710,187 @@ offset_top = 37.0
 offset_right = 119.0
 offset_bottom = 77.0
 max_level = 3
+
+[node name="MovementSpeedDebuff" parent="InitialNode/MovementSpeed/Movement4" instance=ExtResource("1_do54u")]
+layout_mode = 0
+offset_left = 83.0
+offset_top = -66.0
+offset_right = 123.0
+offset_bottom = -26.0
+
+[node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/MovementSpeedDebuff" instance=ExtResource("3_tnt8k")]
+Stats = {
+"attack_speed": 0.0,
+"critical_chance": 0.0,
+"critical_damage": 0.0,
+"damage": 3.0,
+"damage_flat": 0.0,
+"damage_reduction": 1.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.0,
+"life_steal": 0.0,
+"max_health": 0.0,
+"max_health_flat": 0.0,
+"movement_speed": -2.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
+
+[node name="UltimateHealth" parent="InitialNode/MovementSpeed/Movement4/MovementSpeedDebuff" instance=ExtResource("1_do54u")]
+layout_mode = 0
+offset_left = 93.0
+offset_top = -36.0
+offset_right = 133.0
+offset_bottom = 4.0
+max_level = 1000
+
+[node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/MovementSpeedDebuff/UltimateHealth" instance=ExtResource("3_tnt8k")]
+position = Vector2(-496.567, -213.291)
+Stats = {
+"attack_speed": 0.0,
+"critical_chance": 0.0,
+"critical_damage": 0.0,
+"damage": 0.0,
+"damage_flat": 0.0,
+"damage_reduction": 0.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.0,
+"life_steal": 0.0,
+"max_health": 0.01,
+"max_health_flat": 0.0,
+"movement_speed": 0.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
+
+[node name="CritChance8" parent="InitialNode/MovementSpeed/Movement4/MovementSpeedDebuff" instance=ExtResource("1_do54u")]
+layout_mode = 0
+offset_left = -62.0
+offset_top = -69.0
+offset_right = -22.0
+offset_bottom = -29.0
+
+[node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/MovementSpeedDebuff/CritChance8" instance=ExtResource("3_tnt8k")]
+position = Vector2(-361.567, 159.709)
+Stats = {
+"attack_speed": 0.0,
+"critical_chance": 3.0,
+"critical_damage": 0.0,
+"damage": 0.0,
+"damage_flat": 0.0,
+"damage_reduction": 0.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.0,
+"life_steal": 0.0,
+"max_health": 0.0,
+"max_health_flat": 0.0,
+"movement_speed": 0.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
+
+[node name="CritDmg11" parent="InitialNode/MovementSpeed/Movement4/MovementSpeedDebuff/CritChance8" instance=ExtResource("1_do54u")]
+layout_mode = 0
+offset_left = -99.0
+offset_top = -51.0
+offset_right = -59.0
+offset_bottom = -11.0
+
+[node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/MovementSpeedDebuff/CritChance8/CritDmg11" instance=ExtResource("3_tnt8k")]
+position = Vector2(-262.567, 210.709)
+Stats = {
+"attack_speed": 0.0,
+"critical_chance": 0.0,
+"critical_damage": 6.0,
+"damage": 0.0,
+"damage_flat": 0.0,
+"damage_reduction": 0.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.0,
+"life_steal": 0.0,
+"max_health": 0.0,
+"max_health_flat": 0.0,
+"movement_speed": 0.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
+
+[node name="StaminaRegen3" parent="InitialNode/MovementSpeed/Movement4/MovementSpeedDebuff/CritChance8/CritDmg11" instance=ExtResource("1_do54u")]
+layout_mode = 0
+offset_left = -111.0
+offset_top = 11.0
+offset_right = -71.0
+offset_bottom = 51.0
+
+[node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/MovementSpeedDebuff/CritChance8/CritDmg11/StaminaRegen3" instance=ExtResource("3_tnt8k")]
+position = Vector2(-151.567, 199.709)
+Stats = {
+"attack_speed": 0.0,
+"critical_chance": 0.0,
+"critical_damage": 0.0,
+"damage": 0.0,
+"damage_flat": 0.0,
+"damage_reduction": 0.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.0,
+"life_steal": 0.0,
+"max_health": 0.0,
+"max_health_flat": 0.0,
+"movement_speed": 0.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.045
+}
+
+[node name="UltimateNodes" parent="InitialNode/MovementSpeed/Movement4/MovementSpeedDebuff/CritChance8/CritDmg11/StaminaRegen3" instance=ExtResource("1_do54u")]
+layout_mode = 0
+offset_left = -93.0
+offset_top = 28.0
+offset_right = -53.0
+offset_bottom = 68.0
+max_level = 500
+
+[node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/MovementSpeedDebuff/CritChance8/CritDmg11/StaminaRegen3/UltimateNodes" instance=ExtResource("3_tnt8k")]
+position = Vector2(-58.5674, 171.709)
+Stats = {
+"attack_speed": 0.01,
+"critical_chance": 0.01,
+"critical_damage": 0.02,
+"damage": 0.03,
+"damage_flat": 0.0,
+"damage_reduction": 0.01,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.01,
+"life_steal": 0.0,
+"max_health": 0.0,
+"max_health_flat": 0.0,
+"movement_speed": 0.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
 
 [node name="Modifier" parent="InitialNode/MovementSpeed/Movement4" instance=ExtResource("3_tnt8k")]
 Stats = {
@@ -577,6 +966,189 @@ Stats = {
 "max_health": 0.0,
 "max_health_flat": 0.0,
 "movement_speed": 1.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
+
+[node name="UltimateDamage" parent="InitialNode/MovementSpeed/Movement4/DmgRed1/MoveSpeed5" instance=ExtResource("1_do54u")]
+layout_mode = 0
+offset_left = -76.0
+offset_top = 84.0
+offset_right = -36.0
+offset_bottom = 124.0
+max_level = 250
+
+[node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/DmgRed1/MoveSpeed5/UltimateDamage" instance=ExtResource("3_tnt8k")]
+position = Vector2(-344.567, -225.291)
+Stats = {
+"attack_speed": 0.0,
+"critical_chance": 0.0,
+"critical_damage": 0.0,
+"damage": 0.1,
+"damage_flat": 0.0,
+"damage_reduction": 0.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.0,
+"life_steal": 0.0,
+"max_health": 0.0,
+"max_health_flat": 0.0,
+"movement_speed": 0.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
+
+[node name="MaxHealth8" parent="InitialNode/MovementSpeed/Movement4/DmgRed1/MoveSpeed5/UltimateDamage" instance=ExtResource("1_do54u")]
+layout_mode = 0
+offset_left = 173.0
+offset_top = -17.0
+offset_right = 213.0
+offset_bottom = 23.0
+
+[node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/DmgRed1/MoveSpeed5/UltimateDamage/MaxHealth8" instance=ExtResource("3_tnt8k")]
+position = Vector2(-517.567, -208.291)
+Stats = {
+"attack_speed": 0.0,
+"critical_chance": 0.0,
+"critical_damage": 0.0,
+"damage": 0.0,
+"damage_flat": 0.0,
+"damage_reduction": 0.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.0,
+"life_steal": 0.0,
+"max_health": 10.0,
+"max_health_flat": 10.0,
+"movement_speed": 0.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
+
+[node name="HealthRegen5" parent="InitialNode/MovementSpeed/Movement4/DmgRed1" instance=ExtResource("1_do54u")]
+layout_mode = 0
+offset_left = -82.0
+offset_top = 15.0
+offset_right = -42.0
+offset_bottom = 55.0
+max_level = 2
+
+[node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/DmgRed1/HealthRegen5" instance=ExtResource("3_tnt8k")]
+position = Vector2(-307.567, -70.2906)
+Stats = {
+"attack_speed": 0.0,
+"critical_chance": 0.0,
+"critical_damage": 0.0,
+"damage": 0.0,
+"damage_flat": 0.0,
+"damage_reduction": 0.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.5,
+"life_steal": 0.0,
+"max_health": 0.0,
+"max_health_flat": 0.0,
+"movement_speed": 0.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
+
+[node name="CritChance4" parent="InitialNode/MovementSpeed/Movement4/DmgRed1" instance=ExtResource("1_do54u")]
+layout_mode = 0
+offset_left = 123.0
+offset_top = -22.0
+offset_right = 163.0
+offset_bottom = 18.0
+
+[node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/DmgRed1/CritChance4" instance=ExtResource("3_tnt8k")]
+position = Vector2(-512.567, -33.2906)
+Stats = {
+"attack_speed": 0.0,
+"critical_chance": 2.0,
+"critical_damage": 1.0,
+"damage": 0.0,
+"damage_flat": 0.0,
+"damage_reduction": 0.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.0,
+"life_steal": 0.0,
+"max_health": 0.0,
+"max_health_flat": 0.0,
+"movement_speed": 0.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
+
+[node name="CritChanceUltimate" parent="InitialNode/MovementSpeed/Movement4/DmgRed1/CritChance4" instance=ExtResource("1_do54u")]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 84.0
+offset_right = 67.0
+offset_bottom = 124.0
+max_level = 100
+
+[node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/DmgRed1/CritChance4/CritChanceUltimate" instance=ExtResource("3_tnt8k")]
+Stats = {
+"attack_speed": 0.0,
+"critical_chance": 0.1,
+"critical_damage": 0.0,
+"damage": 0.0,
+"damage_flat": 0.0,
+"damage_reduction": 0.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.0,
+"life_steal": 0.0,
+"max_health": 0.0,
+"max_health_flat": 0.0,
+"movement_speed": 0.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
+
+[node name="CritDmgUltimate" parent="InitialNode/MovementSpeed/Movement4/DmgRed1/CritChance4" instance=ExtResource("1_do54u")]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -79.0
+offset_right = 47.0
+offset_bottom = -39.0
+max_level = 25
+
+[node name="Modifier" parent="InitialNode/MovementSpeed/Movement4/DmgRed1/CritChance4/CritDmgUltimate" instance=ExtResource("3_tnt8k")]
+position = Vector2(-519.567, 45.7094)
+Stats = {
+"attack_speed": 0.0,
+"critical_chance": 0.0,
+"critical_damage": 0.5,
+"damage": 0.0,
+"damage_flat": 0.0,
+"damage_reduction": 0.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.0,
+"life_steal": 0.0,
+"max_health": 0.0,
+"max_health_flat": 0.0,
+"movement_speed": 0.0,
 "poison_dmg": 0.0,
 "poison_tick_speed": 0.0,
 "projectile_number": 0.0,
@@ -682,7 +1254,88 @@ offset_left = -93.0
 offset_top = 47.0
 offset_right = -53.0
 offset_bottom = 87.0
-max_level = 100
+max_level = 20
 
 [node name="Modifier" parent="InitialNode/Stamina/Stamina2/DmgRed3/LifeStealUltimate" instance=ExtResource("3_tnt8k")]
 position = Vector2(-107.567, -253.291)
+Stats = {
+"attack_speed": 0.0,
+"critical_chance": 0.0,
+"critical_damage": 0.0,
+"damage": 0.0,
+"damage_flat": 0.0,
+"damage_reduction": 0.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.0,
+"life_steal": 1.0,
+"max_health": 0.0,
+"max_health_flat": 0.0,
+"movement_speed": 0.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
+
+[node name="TrueDmg1" parent="InitialNode/Stamina/Stamina2/DmgRed3/LifeStealUltimate" instance=ExtResource("1_do54u")]
+layout_mode = 0
+offset_left = -109.0
+offset_top = 4.0
+offset_right = -69.0
+offset_bottom = 44.0
+
+[node name="Modifier" parent="InitialNode/Stamina/Stamina2/DmgRed3/LifeStealUltimate/TrueDmg1" instance=ExtResource("3_tnt8k")]
+position = Vector2(1.43256, -257.291)
+Stats = {
+"attack_speed": 0.0,
+"critical_chance": 0.0,
+"critical_damage": 0.0,
+"damage": 0.0,
+"damage_flat": 0.5,
+"damage_reduction": 0.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.0,
+"life_steal": 0.0,
+"max_health": 0.0,
+"max_health_flat": 0.0,
+"movement_speed": 0.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
+
+[node name="AttackSpeedUltimate" parent="InitialNode/Stamina/Stamina2" instance=ExtResource("1_do54u")]
+layout_mode = 0
+offset_left = -116.0
+offset_top = 1.0
+offset_right = -76.0
+offset_bottom = 41.0
+max_level = 100
+
+[node name="Modifier" parent="InitialNode/Stamina/Stamina2/AttackSpeedUltimate" instance=ExtResource("3_tnt8k")]
+position = Vector2(-141.567, -141.291)
+Stats = {
+"attack_speed": 0.1,
+"critical_chance": 0.0,
+"critical_damage": 0.0,
+"damage": 0.0,
+"damage_flat": 0.0,
+"damage_reduction": 0.0,
+"life_gain_on_hit": 0.0,
+"life_regen": 0.0,
+"life_steal": 0.0,
+"max_health": 0.0,
+"max_health_flat": 0.0,
+"movement_speed": 0.0,
+"poison_dmg": 0.0,
+"poison_tick_speed": 0.0,
+"projectile_number": 0.0,
+"stamina": 0.0,
+"stamina_flat": 0.0,
+"stamina_regen": 0.0
+}
