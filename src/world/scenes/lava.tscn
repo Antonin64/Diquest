@@ -1,15 +1,14 @@
-[gd_scene load_steps=27 format=3 uid="uid://bebw2ctn2tdax"]
+[gd_scene load_steps=26 format=3 uid="uid://bebw2ctn2tdax"]
 
-[ext_resource type="Texture2D" uid="uid://bfdo3humx3j0w" path="res://world/assets/2DML_SET3_v1.0/mainlevbuild.png" id="1_hj7ml"]
-[ext_resource type="Texture2D" uid="uid://d03y4i221jip4" path="res://world/assets/2DML_SET3_v1.0/decorative_props.png" id="2_inay7"]
-[ext_resource type="Texture2D" uid="uid://bimcp8kssv5lx" path="res://world/assets/2DML_SET3_v1.0/other_props.png" id="3_oh7yt"]
-[ext_resource type="Texture2D" uid="uid://d3nxv0jd8dovw" path="res://world/assets/2DML_SET3_v1.0/anim/rocksmoke1.png" id="4_rc2xr"]
-[ext_resource type="Texture2D" uid="uid://d1katggdhu3es" path="res://world/assets/2DML_SET3_v1.0/anim/rocksmoke2.png" id="5_w2le4"]
-[ext_resource type="Texture2D" uid="uid://doe5u68ratkra" path="res://world/assets/2DML_SET3_v1.0/anim/rocksmoke3.png" id="6_k26gt"]
-[ext_resource type="Texture2D" uid="uid://bj5n07175cgh7" path="res://world/assets/2DML_SET3_v1.0/anim/rocksmoke4.png" id="7_42a3t"]
-[ext_resource type="Texture2D" uid="uid://crhej4jnty41e" path="res://world/assets/2DML_SET3_v1.0/anim/volc_bubble1.png" id="8_4esio"]
-[ext_resource type="Texture2D" uid="uid://dkso0b0iditx3" path="res://world/assets/2DML_SET3_v1.0/anim/volc_bubble2.png" id="9_vjxya"]
-[ext_resource type="PackedScene" uid="uid://b4ay6ose6si8h" path="res://entities/Player.tscn" id="10_wgwit"]
+[ext_resource type="Texture2D" uid="uid://dfmsgvkck10e" path="res://world/assets/2DML_SET3_v1.0/mainlevbuild.png" id="1_hj7ml"]
+[ext_resource type="Texture2D" uid="uid://qiwuw858xyng" path="res://world/assets/2DML_SET3_v1.0/decorative_props.png" id="2_inay7"]
+[ext_resource type="Texture2D" uid="uid://dx5pib6j148nq" path="res://world/assets/2DML_SET3_v1.0/other_props.png" id="3_oh7yt"]
+[ext_resource type="Texture2D" uid="uid://egtbnlw7l602" path="res://world/assets/2DML_SET3_v1.0/anim/rocksmoke1.png" id="4_rc2xr"]
+[ext_resource type="Texture2D" uid="uid://bymw1bsrwsd55" path="res://world/assets/2DML_SET3_v1.0/anim/rocksmoke2.png" id="5_w2le4"]
+[ext_resource type="Texture2D" uid="uid://cx4voymviugl1" path="res://world/assets/2DML_SET3_v1.0/anim/rocksmoke3.png" id="6_k26gt"]
+[ext_resource type="Texture2D" uid="uid://cqv6bv7rofkkq" path="res://world/assets/2DML_SET3_v1.0/anim/rocksmoke4.png" id="7_42a3t"]
+[ext_resource type="Texture2D" uid="uid://dlwuu67kpewmf" path="res://world/assets/2DML_SET3_v1.0/anim/volc_bubble1.png" id="8_4esio"]
+[ext_resource type="Texture2D" uid="uid://cb6pj2v8mn0ul" path="res://world/assets/2DML_SET3_v1.0/anim/volc_bubble2.png" id="9_vjxya"]
 [ext_resource type="Script" path="res://world/scenes/Spawn Skeleton.gd" id="10_x1cr8"]
 [ext_resource type="Script" path="res://world/scenes/Spawn Wolf.gd" id="12_mg34n"]
 
@@ -19458,9 +19457,6 @@ script = ExtResource("10_x1cr8")
 [node name="Timer" type="Timer" parent="NavigationRegion2D/Spawn Skeleton"]
 wait_time = 60.0
 one_shot = true
-
-[node name="CharacterBody2D" parent="NavigationRegion2D" instance=ExtResource("10_wgwit")]
-position = Vector2(232, 227)
 
 [node name="décors" type="TileMap" parent="NavigationRegion2D"]
 visible = false
