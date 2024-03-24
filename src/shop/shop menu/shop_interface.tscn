@@ -1,30 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtn3wtyerkv1x"]
+[gd_scene load_steps=11 format=3 uid="uid://dtn3wtyerkv1x"]
 
-[ext_resource type="Texture2D" uid="uid://u30bqlnvgxck" path="res://shop/shop_sprite/shop_stylé.jpg" id="1_4cq8c"]
+[ext_resource type="Texture2D" uid="uid://4lf818y1ia5c" path="res://shop/shop_sprite/shop_stylé.jpg" id="1_4cq8c"]
 [ext_resource type="Script" path="res://shop/shop menu/ItemList.gd" id="2_8jtaj"]
+[ext_resource type="Texture2D" uid="uid://cs7jc7iaciyi" path="res://world/assets/weapons/swords/sword_common.png" id="2_djiec"]
 [ext_resource type="Script" path="res://shop/shop menu/exit.gd" id="3_1mjlo"]
+[ext_resource type="Texture2D" uid="uid://bagrjhendtsyr" path="res://world/assets/weapons/swords/sword_rare.png" id="3_miwwl"]
+[ext_resource type="Texture2D" uid="uid://bvvl8mkc8pss4" path="res://world/assets/weapons/swords/sword_uncommon.png" id="4_fm7x2"]
 [ext_resource type="Script" path="res://shop/shop menu/forge.gd" id="4_qpu4b"]
+[ext_resource type="Texture2D" uid="uid://kqslx10etj80" path="res://world/assets/weapons/swords/sword_epic.png" id="5_b3wte"]
+[ext_resource type="Texture2D" uid="uid://bql5o4l103qkt" path="res://world/assets/weapons/swords/sword_legendary.png" id="6_2rtky"]
+[ext_resource type="Texture2D" uid="uid://dpw72x20d36br" path="res://world/assets/weapons/swords/sword_mythical.png" id="7_ldi24"]
 
 [node name="shop interface" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = -2.0
-offset_right = 4.0
-offset_bottom = 4.0
+offset_left = 24.0
+offset_top = -18.0
+offset_right = -707.0
+offset_bottom = -430.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 show_behind_parent = true
 light_mask = 8
+custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 0
-offset_left = -36.0
+offset_left = -21.0
 offset_top = 9.0
-offset_right = 1193.0
-offset_bottom = 668.0
+offset_right = 1894.0
+offset_bottom = 1094.0
 auto_translate = false
 texture = ExtResource("1_4cq8c")
 expand_mode = 2
@@ -38,32 +45,47 @@ anchor_left = 0.028
 anchor_top = 0.048
 anchor_right = 0.134
 anchor_bottom = 0.84
-offset_left = 23.744
-offset_top = 22.896
-offset_right = 62.632
-offset_bottom = 22.68
-item_count = 2
-item_0/text = "BITCOIN              20"
-item_1/text = "test"
+offset_left = 10.24
+offset_top = 29.16
+offset_right = -3.28
+offset_bottom = 49.8
+max_text_lines = 22
+auto_height = true
+item_count = 6
+fixed_column_width = 54
+fixed_icon_size = Vector2i(50, 50)
+item_0/text = "comon sword"
+item_0/icon = ExtResource("2_djiec")
+item_0/selectable = false
+item_1/text = "uncomon sword"
+item_1/icon = ExtResource("4_fm7x2")
+item_2/text = "rare sword"
+item_2/icon = ExtResource("3_miwwl")
+item_3/text = "epic sword"
+item_3/icon = ExtResource("5_b3wte")
+item_4/text = "legendary sword"
+item_4/icon = ExtResource("6_2rtky")
+item_5/text = "mythical sword"
+item_5/icon = ExtResource("7_ldi24")
 script = ExtResource("2_8jtaj")
 
 [node name="exit" type="Button" parent="TextureRect"]
 top_level = true
 layout_mode = 0
-offset_left = 1017.0
-offset_top = 570.0
-offset_right = 1130.0
-offset_bottom = 628.0
+offset_left = 1609.0
+offset_top = 890.0
+offset_right = 1832.0
+offset_bottom = 1012.0
 text = "EXIT"
 script = ExtResource("3_1mjlo")
 
 [node name="forge" type="Button" parent="TextureRect"]
 layout_mode = 0
-offset_left = 914.0
-offset_top = 563.0
-offset_right = 1023.0
-offset_bottom = 615.0
-text = "Go to gorge"
+offset_left = 1305.0
+offset_top = 899.0
+offset_right = 1500.0
+offset_bottom = 1021.0
+text = "Go to forge"
 script = ExtResource("4_qpu4b")
 
 [connection signal="item_activated" from="TextureRect/ItemList" to="TextureRect/ItemList" method="_on_item_activated"]

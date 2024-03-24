@@ -1,0 +1,122 @@
+[gd_scene load_steps=10 format=3 uid="uid://c3dfqa65xspar"]
+
+[ext_resource type="Script" path="res://shop/comon sword page/comon_word_shop.gd" id="1_fvqk5"]
+[ext_resource type="Texture2D" uid="uid://djbxyx2mtm7nc" path="res://shop/shop_sprite/armuererie.jpg" id="2_omkcf"]
+[ext_resource type="Script" path="res://shop/comon sword page/previous.gd" id="3_g6rui"]
+[ext_resource type="Script" path="res://shop/comon sword page/minus.gd" id="4_rwfib"]
+[ext_resource type="Script" path="res://shop/comon sword page/add.gd" id="5_el513"]
+[ext_resource type="Texture2D" uid="uid://dgc3l0dgoonvi" path="res://shop/shop_sprite/Pasted image 1.png" id="6_tr6nv"]
+[ext_resource type="Texture2D" uid="uid://bvvl8mkc8pss4" path="res://world/assets/weapons/swords/sword_uncommon.png" id="7_uyjun"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_opmph"]
+
+[sub_resource type="GDScript" id="GDScript_csmx5"]
+script/source = "extends Label
+"
+
+[node name="bitcoin shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 10.0
+offset_right = -16.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fvqk5")
+
+[node name="Background" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_left = 5.0
+offset_top = -7.0
+offset_right = 1917.0
+offset_bottom = 1072.0
+texture = ExtResource("2_omkcf")
+
+[node name="previous" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 919.0
+offset_right = 301.0
+offset_bottom = 1039.0
+text = "previous"
+script = ExtResource("3_g6rui")
+
+[node name="minus" type="Button" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.143
+anchor_bottom = 0.202
+offset_left = 372.0
+offset_top = 664.0
+offset_right = 330.584
+offset_bottom = 566.042
+text = "-"
+script = ExtResource("4_rwfib")
+
+[node name="add" type="Button" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.079
+anchor_bottom = 0.104
+offset_left = 1242.0
+offset_top = 669.0
+offset_right = 1338.95
+offset_bottom = 682.784
+text = "+"
+script = ExtResource("5_el513")
+
+[node name="nb_item" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 782.0
+offset_top = 702.0
+offset_right = 1016.0
+offset_bottom = 772.0
+label_settings = SubResource("LabelSettings_opmph")
+script = SubResource("GDScript_csmx5")
+
+[node name="SELL" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 1250.0
+offset_top = 894.0
+offset_right = 1525.0
+offset_bottom = 1018.0
+text = "SELL FOR : "
+
+[node name="player_nb_item" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 23.0
+offset_right = 242.0
+offset_bottom = 122.0
+
+[node name="player_money" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 174.0
+offset_right = 242.0
+offset_bottom = 257.0
+
+[node name="item frame" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_left = 661.0
+offset_top = 115.0
+offset_right = 1157.0
+offset_bottom = 626.0
+texture = ExtResource("6_tr6nv")
+
+[node name="item sprite" type="TextureRect" parent="Background/item frame"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 66.0
+offset_right = 435.0
+offset_bottom = 436.0
+texture = ExtResource("7_uyjun")
+
+[connection signal="pressed" from="Background/previous" to="Background/previous" method="_on_pressed"]
+[connection signal="pressed" from="Background/minus" to="Background/minus" method="_on_pressed"]
+[connection signal="draw" from="Background/add" to="Background/add" method="_on_draw"]
+[connection signal="pressed" from="Background/add" to="Background/add" method="_on_pressed"]

@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://po230hyr6ix0"]
 
-[ext_resource type="Script" path="res://shop/comon sword page/bitcoin shop.gd" id="1_4ftbh"]
-[ext_resource type="Script" path="res://shop/comon sword page/previous.gd" id="2_tu4ap"]
-[ext_resource type="Texture2D" uid="uid://djbxyx2mtm7nc" path="res://shop/shop_sprite/armuererie.jpg" id="2_ua5q1"]
-[ext_resource type="Script" path="res://shop/comon sword page/minus.gd" id="3_84uhl"]
-[ext_resource type="Script" path="res://shop/comon sword page/add.gd" id="4_dp61n"]
-[ext_resource type="Texture2D" uid="uid://dgc3l0dgoonvi" path="res://shop/shop_sprite/Pasted image 1.png" id="6_5xntl"]
-[ext_resource type="Texture2D" uid="uid://cs7jc7iaciyi" path="res://world/assets/weapons/swords/sword_common.png" id="7_k3j5v"]
+[ext_resource type="Script" path="res://shop/comon sword page/comon_word_shop.gd" id="1_gwacb"]
+[ext_resource type="Texture2D" uid="uid://djbxyx2mtm7nc" path="res://shop/shop_sprite/armuererie.jpg" id="2_jqbnv"]
+[ext_resource type="Script" path="res://shop/comon sword page/previous.gd" id="3_5w8yd"]
+[ext_resource type="Script" path="res://shop/comon sword page/minus.gd" id="4_yd5yt"]
+[ext_resource type="Script" path="res://shop/comon sword page/add.gd" id="5_twsuu"]
+[ext_resource type="Texture2D" uid="uid://dgc3l0dgoonvi" path="res://shop/shop_sprite/Pasted image 1.png" id="6_8mb4a"]
+[ext_resource type="Texture2D" uid="uid://cs7jc7iaciyi" path="res://world/assets/weapons/swords/sword_common.png" id="7_8jiib"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_opmph"]
 
@@ -25,15 +25,16 @@ offset_right = -16.0
 offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_4ftbh")
+script = ExtResource("1_gwacb")
 
 [node name="Background" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 0
 offset_left = 5.0
 offset_top = -7.0
 offset_right = 1917.0
 offset_bottom = 1072.0
-texture = ExtResource("2_ua5q1")
+texture = ExtResource("2_jqbnv")
 
 [node name="previous" type="Button" parent="Background"]
 layout_mode = 0
@@ -42,7 +43,7 @@ offset_top = 919.0
 offset_right = 301.0
 offset_bottom = 1039.0
 text = "previous"
-script = ExtResource("2_tu4ap")
+script = ExtResource("3_5w8yd")
 
 [node name="minus" type="Button" parent="Background"]
 layout_mode = 1
@@ -54,7 +55,7 @@ offset_top = 664.0
 offset_right = 330.584
 offset_bottom = 566.042
 text = "-"
-script = ExtResource("3_84uhl")
+script = ExtResource("4_yd5yt")
 
 [node name="add" type="Button" parent="Background"]
 layout_mode = 1
@@ -66,7 +67,7 @@ offset_top = 669.0
 offset_right = 1338.95
 offset_bottom = 682.784
 text = "+"
-script = ExtResource("4_dp61n")
+script = ExtResource("5_twsuu")
 
 [node name="nb_item" type="Label" parent="Background"]
 layout_mode = 0
@@ -105,7 +106,7 @@ offset_left = 661.0
 offset_top = 115.0
 offset_right = 1157.0
 offset_bottom = 626.0
-texture = ExtResource("6_5xntl")
+texture = ExtResource("6_8mb4a")
 
 [node name="item sprite" type="TextureRect" parent="Background/item frame"]
 layout_mode = 0
@@ -113,7 +114,7 @@ offset_left = 74.0
 offset_top = 66.0
 offset_right = 435.0
 offset_bottom = 436.0
-texture = ExtResource("7_k3j5v")
+texture = ExtResource("7_8jiib")
 
 [connection signal="pressed" from="Background/previous" to="Background/previous" method="_on_pressed"]
 [connection signal="pressed" from="Background/minus" to="Background/minus" method="_on_pressed"]

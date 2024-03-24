@@ -3,4 +3,4 @@ extends Button
 
 
 func _on_pressed():
-	get_tree().change_scene_to_file("res://merchant/merchant_pnj/pnj.tscn")
+	get_tree().change_scene_to_file("res://map.tscn")
