@@ -4,7 +4,7 @@ Epitech Jam  march 2024.
 
 Description
 
-RPG retro, dans lequel notre héros se lancera dans une quête inoubliable pour vaincre les légendaires "NOM BITE DIVINE" et "NOM BITE INFERNALE" 
+RPG retro, dans lequel notre héros se lancera dans une quête inoubliable pour vaincre différents ennemis
 
 Fonctionnalités principales
 
